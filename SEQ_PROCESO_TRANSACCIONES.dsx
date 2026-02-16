@@ -1,0 +1,3472 @@
+BEGIN HEADER
+   CharacterSet "CP1252"
+   ExportingTool "IBM InfoSphere DataStage Export"
+   ToolVersion "8"
+   ServerName "DATASTAGE-ENGINE-DEV"
+   ToolInstanceID "DESA_FAC_INTSAF"
+   MDISVersion "1.0"
+   Date "2026-02-16"
+   Time "13.58.47"
+   ServerVersion "11.7"
+END HEADER
+BEGIN DSJOB
+   Identifier "JOB_EXT_TRANSACCIONES"
+   DateModified "2026-02-13"
+   TimeModified "11.22.12"
+   BEGIN DSRECORD
+      Identifier "ROOT"
+      OLEType "CJobDefn"
+      Readonly "0"
+      Name "JOB_EXT_TRANSACCIONES"
+      Description "Extración de los pagos de SAF de la tabla tbl_payments"
+      NextID "287"
+      Container "V0"
+      FullDescription =+=+=+=
+DESCRIPCIÓN: GENERA REGISTROS TRANSACCIONES VALIDAS E INVALIDAS
+
+
+AUTOR: ING. Luis Bermudez 
+
+
+VERSIÓN: V.1.0
+=+=+=+=
+      JobVersion "56.0.0"
+      ControlAfterSubr "0"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "PS_CON_SAF"
+         Prompt "PS_CON_SAF parameters"
+         Default "(As pre-defined)"
+         HelpTxt "Parametros de BD SAF"
+         ParamType "13"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VAL_DS_TRANSACCIONES"
+         Prompt "Dataset Fil"
+         Default "TMP_TRAN.ds"
+         HelpTxt "nombre  del dataset"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "AdvancedRuntimeOptions"
+         Value "#DSProjectARTOptions#"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceMode"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceSeq"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceRecords"
+         Value "100"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceSkip"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TracePeriod"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RecordJobPerformanceData"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "IdentList"
+         Value "EXT_TRANSACCIONES"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "ClientCodePage"
+         Value "1252"
+      END DSSUBRECORD
+      NULLIndicatorPosition "0"
+      IsTemplate "0"
+      NLSLocale ",,,,"
+      JobType "3"
+      Category "\\Test\\PRC_TRANSAC\\EXTR"
+      CenturyBreakYear "30"
+      NextAliasID "2"
+      ParameterFileDDName "DD00001"
+      ReservedWordCheck "1"
+      TransactionSize "0"
+      ValidationStatus "0"
+      Uploadable "0"
+      PgmCustomizationFlag "0"
+      JobReportFlag "0"
+      AllowMultipleInvocations "0"
+      Act2ActOverideDefaults "0"
+      Act2ActEnableRowBuffer "0"
+      Act2ActUseIPC "0"
+      Act2ActBufferSize "0"
+      Act2ActIPCTimeout "0"
+      ExpressionSemanticCheckFlag "0"
+      TraceOption "0"
+      EnableCacheSharing "0"
+      RuntimeColumnPropagation "0"
+      RelStagesInJobStatus "-1"
+      WebServiceEnabled "0"
+      MFProcessMetaData "0"
+      MFProcessMetaDataXMLFileExchangeMethod "0"
+      IMSProgType "0"
+      CopyLibPrefix "ARDT"
+      RecordPerformanceResults "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0"
+      OLEType "CContainerView"
+      Readonly "0"
+      Name "Job"
+      NextID "1"
+      IsTopLevel "0"
+      StageList "V0A0|V0S1|V286S0"
+      StageXPos "26|144|768"
+      StageYPos "49|384|384"
+      StageTypes "ID_PALETTEJOBANNOTATION|CCustomStage.CC_GUI|CCustomStage"
+      NextStageID "7"
+      SnapToGrid "1"
+      GridLines "0"
+      ZoomValue "100"
+      StageXSize "650|48|48"
+      StageYSize "218|48|48"
+      ContainerViewSizing "0156 0156 1318 0674 0000 0001 0000 0000"
+      StageNames " |EXT_TRANSACCIONES|DS_EXT_TRANSACCIONS"
+      StageTypeIDs " |ODBCConnectorPX|PxDataSet"
+      LinkNames " |LNK_REGISTRA_TRANSACCIONES| "
+      LinkHasMetaDatas " |True| "
+      LinkTypes " |1| "
+      LinkNamePositionXs " |368| "
+      LinkNamePositionYs " |407| "
+      TargetStageIDs " |V286S0| "
+      SourceStageEffectiveExecutionModes " |2| "
+      SourceStageRuntimeExecutionModes " |2| "
+      TargetStageEffectiveExecutionModes " |2| "
+      TargetStageRuntimeExecutionModes " |2| "
+      LinkIsSingleOperatorLookup " |False| "
+      LinkIsSortSequential " |False| "
+      LinkSortMode " |1| "
+      LinkPartColMode " |6| "
+      LinkSourcePinIDs " |V0S1P2| "
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0A0"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V0A0"
+      NextID "0"
+      AnnotationType "2"
+      TextFont "Arial\\10\\0\\0\\0\\700\\0"
+      TextHorizontalJustification "0"
+      TextVerticalJustification "0"
+      TextColor "0"
+      BackgroundColor "12713983"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S1"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "EXT_TRANSACCIONES"
+      NextID "3"
+      OutputPins "V0S1P2"
+      StageType "ODBCConnectorPX"
+      AllowColumnMapping "0"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "VariantName"
+         Value "3.5"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantLibrary"
+         Value "ccodbc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantVersion"
+         Value "70"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SupportedVariants"
+         Value "V1;3.5::ccodbc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SupportedVariantsLibraries"
+         Value "ccodbc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SupportedVariantsVersions"
+         Value "1.0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Orientation"
+         Value "link"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectFromLink"
+         Value "-1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectThreshold"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectNumber"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectUsesPercentage"
+         Value "false"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectorName"
+         Value "ODBCConnector"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Engine"
+         Value "EE"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Context"
+         Value "source"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectionString"
+         Value "/Connection/DataSource"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Username"
+         Value "/Connection/Username"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Password"
+         Value "/Connection/Password"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "XMLProperties"
+         Value =+=+=+=
+<?xml version='1.0' encoding='UTF-16'?><Properties version='1.1'><Common><Context type='int'>1</Context><Variant type='string'>3.5</Variant><DescriptorVersion type='string'>1.0</DescriptorVersion><PartitionType type='int'>-1</PartitionType><RCP type='int'>0</RCP></Common><Connection><DataSource modified='1' type='string'><![CDATA[#PS_CON_SAF.$V_FAC_CON_DNS_SAF#]]></DataSource><Username modified='1' type='string'><![CDATA[#PS_CON_SAF.$V_FAC_CON_USR_SAF#]]></Username><Password modified='1' type='string'><![CDATA[#PS_CON_SAF.$V_FAC_CON_PWD_SAF#]]></Password></Connection><Usage><GenerateSQL type='bool'><![CDATA[0]]></GenerateSQL><EnableQuotedIDs type='bool'><![CDATA[0]]></EnableQuotedIDs><SQL><SelectStatement modified='1' type='string'><![CDATA[SELECT CAST(transaction_id AS INTEGER), 
+       CAST(customer_id AS INTEGER), 
+       CAST(amount AS DECIMAL(12,2)), 
+       CAST(status AS VARCHAR(20))
+FROM (
+    VALUES 
+        -- ? 15 Transacciones Válidas (Amount > 0 y ACTIVE)
+        (101, 1001, 150.50, 'ACTIVE'), (102, 1002, 200.00, 'ACTIVE'), (103, 1003, 50.25, 'ACTIVE'),
+        (104, 1004, 800.00, 'ACTIVE'), (105, 1005, 10.00, 'ACTIVE'),  (106, 1006, 99.99, 'ACTIVE'),
+        (107, 1007, 45.00, 'ACTIVE'),  (108, 1008, 320.10, 'ACTIVE'), (109, 1009, 500.00, 'ACTIVE'),
+        (110, 1010, 12.50, 'ACTIVE'),  (111, 1011, 75.00, 'ACTIVE'),  (112, 1012, 1000.00, 'ACTIVE'),
+        (113, 1013, 5.00, 'ACTIVE'),   (114, 1014, 25.40, 'ACTIVE'),  (115, 1015, 60.00, 'ACTIVE'),
+
+        -- ? 5 Transacciones con Amount <= 0 (Invalidas por monto)
+        (201, 2001, 0.00, 'ACTIVE'),   (202, 2002, -10.00, 'ACTIVE'), (203, 2003, -50.00, 'ACTIVE'),
+        (204, 2004, 0.00, 'ACTIVE'),   (205, 2005, -1.00, 'ACTIVE'),
+
+        -- ? 5 Transacciones con Status INACTIVE (Invalidas por estado)
+        (301, 3001, 100.00, 'INACTIVE'), (302, 3002, 500.00, 'INACTIVE'), (303, 3003, 20.00, 'INACTIVE'),
+        (304, 3004, 150.00, 'INACTIVE'), (305, 3005, 300.00, 'INACTIVE')
+) AS mock_data(transaction_id, customer_id, amount, status);]]><ReadStatementFromFile type='bool'><![CDATA[0]]></ReadStatementFromFile><Tables collapsed='1'></Tables><Parameters collapsed='1'></Parameters><Columns collapsed='1'></Columns></SelectStatement><EnablePartitioning collapsed='1' type='bool'><![CDATA[0]]></EnablePartitioning></SQL><Transaction><RecordCount type='int'><![CDATA[2000]]></RecordCount><EndOfWave collapsed='1' type='int'><![CDATA[0]]></EndOfWave></Transaction><Session><IsolationLevel type='int'><![CDATA[1]]></IsolationLevel><AutocommitMode type='int'><![CDATA[0]]></AutocommitMode><ArraySize type='int'><![CDATA[2000]]></ArraySize><SchemaReconciliation><FailOnSizeMismatch type='bool'><![CDATA[1]]></FailOnSizeMismatch><FailOnTypeMismatch type='bool'><![CDATA[1]]></FailOnTypeMismatch><FailOnCodePageMismatch type='bool'><![CDATA[0]]></FailOnCodePageMismatch></SchemaReconciliation><PassLobLocator collapsed='1' type='bool'><![CDATA[0]]></PassLobLocator><CodePage collapsed='1' type='int'><![CDATA[0]]></CodePage></Session><BeforeAfter collapsed='1' type='bool'><![CDATA[0]]></BeforeAfter><LimitRows collapsed='1' type='bool'><![CDATA[0]]></LimitRows></Usage></Properties >
+=+=+=+=
+      END DSSUBRECORD
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S1P2"
+      OLEType "CCustomOutput"
+      Readonly "0"
+      Name "LNK_REGISTRA_TRANSACCIONES"
+      Partner "V286S0|V286S0P1"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "lookup\\type"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantName"
+         Value "3.5"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantLibrary"
+         Value "ccodbc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantVersion"
+         Value "70"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectFromLink"
+         Value "-1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectThreshold"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectNumber"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectUsesPercentage"
+         Value "false"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectorName"
+         Value "ODBCConnector"
+      END DSSUBRECORD
+      Columns "COutputColumn"
+      BEGIN DSSUBRECORD
+         Name "transaction_id"
+         SqlType "4"
+         Precision "0"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "customer_id"
+         SqlType "4"
+         Precision "0"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "amount"
+         SqlType "3"
+         Precision "12"
+         Scale "2"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "status"
+         SqlType "12"
+         Precision "20"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "DiskWriteInc"
+         Value "1048576"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "BufFreeRun"
+         Value "50"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "MaxMemBufSize"
+         Value "3145728"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "QueueUpperSize"
+         Value "0"
+      END DSSUBRECORD
+      LeftTextPos "368"
+      TopTextPos "407"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V286S0"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "DS_EXT_TRANSACCIONS"
+      NextID "2"
+      InputPins "V286S0P1"
+      StageType "PxDataSet"
+      AllowColumnMapping "0"
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V286S0P1"
+      OLEType "CCustomInput"
+      Readonly "0"
+      Name "LNK_REGISTRA_TRANSACCIONES"
+      Partner "V0S1|V0S1P2"
+      LinkType "1"
+      ConditionNotMet "fail"
+      LookupFail "fail"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "dataset"
+         Value "/interfaces/DESA_FAC_INTSAF/INTERFACES/work/#VAL_DS_TRANSACCIONES#"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "datasetmode"
+         Value ">| [ds"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RTColumnProp"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "Part/Col"
+         Value "roundrobin"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "Sort"
+         Value "tsort -key transaction_id -asc"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "SortAdv"
+         Value "-nonStable"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "_PartColSortColumns"
+         Value "transaction_id"
+      END DSSUBRECORD
+      TransactionSize "0"
+      TXNBehaviour "0"
+      EnableTxGroup "0"
+      LinkMinimised "0"
+   END DSRECORD
+END DSJOB
+BEGIN DSJOB
+   Identifier "JOB_LOAD_TRANSACCIONES"
+   DateModified "2026-02-12"
+   TimeModified "12.22.25"
+   BEGIN DSRECORD
+      Identifier "ROOT"
+      OLEType "CJobDefn"
+      Readonly "0"
+      Name "JOB_LOAD_TRANSACCIONES"
+      Description "PROCESO: prueba"
+      NextID "319"
+      Container "V0"
+      JobVersion "56.0.0"
+      ControlAfterSubr "0"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "V_DS_TRF_VALIDAS"
+         Prompt "V_DS_TRF_VALIDAS"
+         Default "TMP_TRAN_VALIDAS.ds"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "V_FILE_SALIDA"
+         Prompt "V_FILE_SALIDA"
+         Default "output.csv"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "AdvancedRuntimeOptions"
+         Value "#DSProjectARTOptions#"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceMode"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceSeq"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceRecords"
+         Value "100"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceSkip"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TracePeriod"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RecordJobPerformanceData"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "IdentList"
+         Value "SEQ_FILE_SALIDA"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "ClientCodePage"
+         Value "1252"
+      END DSSUBRECORD
+      NULLIndicatorPosition "0"
+      IsTemplate "0"
+      NLSLocale ",,,,"
+      JobType "3"
+      Category "\\Test\\PRC_TRANSAC\\LOAD"
+      CenturyBreakYear "30"
+      NextAliasID "2"
+      ParameterFileDDName "DD00001"
+      ReservedWordCheck "1"
+      TransactionSize "0"
+      ValidationStatus "0"
+      Uploadable "0"
+      PgmCustomizationFlag "0"
+      JobReportFlag "0"
+      AllowMultipleInvocations "0"
+      Act2ActOverideDefaults "0"
+      Act2ActEnableRowBuffer "0"
+      Act2ActUseIPC "0"
+      Act2ActBufferSize "0"
+      Act2ActIPCTimeout "0"
+      ExpressionSemanticCheckFlag "0"
+      TraceOption "0"
+      EnableCacheSharing "0"
+      RuntimeColumnPropagation "0"
+      RelStagesInJobStatus "-1"
+      WebServiceEnabled "0"
+      MFProcessMetaData "0"
+      MFProcessMetaDataXMLFileExchangeMethod "0"
+      IMSProgType "0"
+      CopyLibPrefix "ARDT"
+      RecordPerformanceResults "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0"
+      OLEType "CContainerView"
+      Readonly "0"
+      Name "Job"
+      NextID "1"
+      IsTopLevel "0"
+      StageList "V3A0|V318S4|V0S155"
+      StageXPos "70|240|576"
+      StageYPos "0|312|312"
+      StageTypes "ID_PALETTEJOBANNOTATION|CCustomStage|CCustomStage"
+      NextStageID "160"
+      SnapToGrid "1"
+      GridLines "0"
+      ZoomValue "100"
+      StageXSize "536|48|48"
+      StageYSize "141|48|48"
+      ContainerViewSizing "0008 0000 1151 0570 0000 0001 0025 0000"
+      StageNames " |DS_EXT_TRANSACCIONS|SEQ_FILE_SALIDA"
+      StageTypeIDs " |PxDataSet|PxSequentialFile"
+      LinkNames " |LNK_ASEQ_FILE_SALIDA| "
+      LinkHasMetaDatas " |True| "
+      LinkTypes " |1| "
+      LinkNamePositionXs " |381| "
+      LinkNamePositionYs " |341| "
+      TargetStageIDs " |V0S155| "
+      SourceStageEffectiveExecutionModes " |2| "
+      SourceStageRuntimeExecutionModes " |2| "
+      TargetStageEffectiveExecutionModes " |1| "
+      TargetStageRuntimeExecutionModes " |1| "
+      LinkIsSingleOperatorLookup " |False| "
+      LinkIsSortSequential " |False| "
+      LinkSortMode " |0| "
+      LinkPartColMode " |1| "
+      LinkSourcePinIDs " |V318S4P1| "
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S155"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "SEQ_FILE_SALIDA"
+      NextID "4"
+      InputPins "V0S155P3"
+      StageType "PxSequentialFile"
+      AllowColumnMapping "0"
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S155P3"
+      OLEType "CCustomInput"
+      Readonly "0"
+      Name "LNK_ASEQ_FILE_SALIDA"
+      Partner "V318S4|V318S4P1"
+      LinkType "1"
+      ConditionNotMet "fail"
+      LookupFail "fail"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "schema"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "file"
+         Value "\(2)\(2)0\(1)\(3)file\(2)/interfaces/DESA_FAC_INTSAF/INTERFACES/work/#V_FILE_SALIDA#\(2)0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "append\\overwrite"
+         Value "overwrite"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "nocleanup"
+         Value " "
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "rejects"
+         Value "continue"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "firstLineColumnNames"
+         Value " "
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "writemethod"
+         Value "\(2)\(2)0\(1)\(3)writemethod\(2) \(2)0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RTColumnProp"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "SchemaFormat"
+         Value "final_delim=end, delim=';', null_field='', quote=none"
+      END DSSUBRECORD
+      TransactionSize "0"
+      TXNBehaviour "0"
+      EnableTxGroup "0"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V318S4"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "DS_EXT_TRANSACCIONS"
+      NextID "2"
+      OutputPins "V318S4P1"
+      StageType "PxDataSet"
+      AllowColumnMapping "0"
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V318S4P1"
+      OLEType "CCustomOutput"
+      Readonly "0"
+      Name "LNK_ASEQ_FILE_SALIDA"
+      Partner "V0S155|V0S155P3"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "dataset"
+         Value "/interfaces/DESA_FAC_INTSAF/INTERFACES/work/#V_DS_TRF_VALIDAS#"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "missingcolmode"
+         Value " "
+      END DSSUBRECORD
+      Columns "COutputColumn"
+      BEGIN DSSUBRECORD
+         Name "transaction_id"
+         SqlType "4"
+         Precision "0"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "transaction_id"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "customer_id"
+         SqlType "4"
+         Precision "0"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "customer_id"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "amount"
+         SqlType "12"
+         Precision "12"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "amount"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "status"
+         SqlType "12"
+         Precision "20"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "status"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "DiskWriteInc"
+         Value "1048576"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "BufFreeRun"
+         Value "50"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "MaxMemBufSize"
+         Value "3145728"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "QueueUpperSize"
+         Value "0"
+      END DSSUBRECORD
+      LeftTextPos "381"
+      TopTextPos "341"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V3A0"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V3A0"
+      NextID "0"
+      AnnotationType "1"
+      TextFont "MS Shell Dlg\\8\\0\\0\\0\\400\\0"
+      TextHorizontalJustification "0"
+      TextVerticalJustification "1"
+      TextColor "0"
+      BackgroundColor "12713983"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+END DSJOB
+BEGIN DSJOB
+   Identifier "JOB_TRF_TRANSACCIONES"
+   DateModified "2026-02-13"
+   TimeModified "14.41.19"
+   BEGIN DSRECORD
+      Identifier "ROOT"
+      OLEType "CJobDefn"
+      Readonly "0"
+      Name "JOB_TRF_TRANSACCIONES"
+      Description "PROCESO: prueba"
+      NextID "319"
+      Container "V0"
+      JobVersion "56.0.0"
+      ControlAfterSubr "0"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "V_DS_TRANSACCIONES"
+         Prompt "V_FAC_PAR_DS_INSERT_MCAFA"
+         Default "TMP_TRAN.ds"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "V_DS_TRF_VALIDAS"
+         Prompt "V_DS_TRF_VALIDAS"
+         Default "TMP_TRAN_VALIDAS.ds"
+         ParamType "0"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "AdvancedRuntimeOptions"
+         Value "#DSProjectARTOptions#"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceMode"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceSeq"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceRecords"
+         Value "100"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceSkip"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TracePeriod"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RecordJobPerformanceData"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "IdentList"
+         Value "TRF_VALIDA_REGLAS|Peek_151"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "ClientCodePage"
+         Value "1252"
+      END DSSUBRECORD
+      NULLIndicatorPosition "0"
+      IsTemplate "0"
+      NLSLocale ",,,,"
+      JobType "3"
+      Category "\\Test\\PRC_TRANSAC\\TRFC"
+      CenturyBreakYear "30"
+      NextAliasID "2"
+      ParameterFileDDName "DD00001"
+      ReservedWordCheck "1"
+      TransactionSize "0"
+      ValidationStatus "0"
+      Uploadable "0"
+      PgmCustomizationFlag "0"
+      JobReportFlag "0"
+      AllowMultipleInvocations "0"
+      Act2ActOverideDefaults "0"
+      Act2ActEnableRowBuffer "0"
+      Act2ActUseIPC "0"
+      Act2ActBufferSize "0"
+      Act2ActIPCTimeout "0"
+      ExpressionSemanticCheckFlag "0"
+      TraceOption "0"
+      EnableCacheSharing "0"
+      RuntimeColumnPropagation "0"
+      RelStagesInJobStatus "-1"
+      WebServiceEnabled "0"
+      MFProcessMetaData "0"
+      MFProcessMetaDataXMLFileExchangeMethod "0"
+      IMSProgType "0"
+      CopyLibPrefix "ARDT"
+      RecordPerformanceResults "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0"
+      OLEType "CContainerView"
+      Readonly "0"
+      Name "Job"
+      NextID "1"
+      IsTopLevel "0"
+      StageList "V3A0|V318S4|V0S148|V0S151|V0S153"
+      StageXPos "70|120|504|504|936"
+      StageYPos "0|384|384|600|384"
+      StageTypes "ID_PALETTEJOBANNOTATION|CCustomStage|CTransformerStage|CCustomStage|CCustomStage"
+      NextStageID "154"
+      SnapToGrid "1"
+      GridLines "0"
+      ZoomValue "100"
+      StageXSize "536|48|48|48|48"
+      StageYSize "141|48|48|48|48"
+      ContainerViewSizing "0008 0000 1151 0570 0000 0001 0065 0240"
+      StageNames " |DS_EXT_TRANSACCIONS|TRF_VALIDA_REGLAS|Peek_151|DS_TRAN_VALIDAS"
+      StageTypeIDs " |PxDataSet|CTransformerStage|PxPeek|PxDataSet"
+      LinkNames " |LNK_A_TRF_VALIDA_REGLAS|LNK_REGISTRA_TRAN_VALIDAS,LNK_REGISTRA_TRAN_NO_VALIDAS| | "
+      LinkHasMetaDatas " |True|True,True| | "
+      LinkTypes " |1|1,1| | "
+      LinkNamePositionXs " |180|648,528| | "
+      LinkNamePositionYs " |408|390,492| | "
+      TargetStageIDs " |V0S148|V0S153,V0S151| | "
+      SourceStageEffectiveExecutionModes " |2|2,2| | "
+      SourceStageRuntimeExecutionModes " |2|2,2| | "
+      TargetStageEffectiveExecutionModes " |2|2,2| | "
+      TargetStageRuntimeExecutionModes " |2|2,2| | "
+      LinkIsSingleOperatorLookup " |False|False,False| | "
+      LinkIsSortSequential " |False|False,False| | "
+      LinkSortMode " |0|0,0| | "
+      LinkPartColMode " |1|1,1| | "
+      LinkSourcePinIDs " |V318S4P1|V0S148P2,V0S148P3| | "
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S148"
+      OLEType "CTransformerStage"
+      Readonly "0"
+      Name "TRF_VALIDA_REGLAS"
+      NextID "4"
+      InputPins "V0S148P1"
+      OutputPins "V0S148P2|V0S148P3"
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TrxGenCode"
+         Value =+=+=+=
+//
+// Generated file to implement the V0S148_JOB_TRF_TRANSACCIONES_TRF_VALIDA_REGLAS transform operator.
+//
+
+// define our input/output link names
+inputname 0 LNK_A_TRF_VALIDA_REGLAS;
+outputname 0 LNK_REGISTRA_TRAN_VALIDAS;
+outputname 1 LNK_REGISTRA_TRAN_NO_VALIDAS;
+
+initialize {
+ // define our control variables
+ int8 RowRejected0;
+ int8 NullSetVar0;
+
+ // declare our intermediate variables for this section (1)
+ string InterVar0_0;
+ decimal InterVar0_1;
+ string InterVar0_2;
+
+ // initialise constant values which require conversion
+ InterVar0_0 = "suppress_zero";
+ InterVar0_1 = 0;
+ InterVar0_2 = "ACTIVE";
+ // Stage variable declaration and initialisation
+ string StageVar0_vAmount;
+ StageVar0_vAmount = "";
+}
+
+mainloop {
+
+ // evaluate the stage variables first
+ StageVar0_vAmount = string_from_decimal(LNK_A_TRF_VALIDA_REGLAS.amount , InterVar0_0);
+
+ // initialise the rejected row variable
+ RowRejected0 = 1;
+
+ // evaluate constraint and columns for link: LNK_REGISTRA_TRAN_VALIDAS
+ if (((LNK_A_TRF_VALIDA_REGLAS.amount > InterVar0_1) && (LNK_A_TRF_VALIDA_REGLAS.status == InterVar0_2)))
+ {
+  LNK_REGISTRA_TRAN_VALIDAS.amount = StageVar0_vAmount;
+  writerecord 0;
+  RowRejected0 = 0;
+ }
+ // evaluate constraint and columns for link: LNK_REGISTRA_TRAN_NO_VALIDAS
+ if (!(((LNK_A_TRF_VALIDA_REGLAS.amount > InterVar0_1) && (LNK_A_TRF_VALIDA_REGLAS.status == InterVar0_2))))
+ {
+  LNK_REGISTRA_TRAN_NO_VALIDAS.amount = StageVar0_vAmount;
+  writerecord 1;
+  RowRejected0 = 0;
+ }
+}
+
+finish {
+}
+
+=+=+=+=
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TrxGenCache"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TrxClassName"
+         Value "V0S148_JOB_TRF_TRANSACCIONES_TRF_VALIDA_REGLAS"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TrxGenWarnings"
+         Value =+=+=+=
+TRF_VALIDA_REGLAS
+   WARNING: Error in constraint expression for link LNK_REGISTRA_TRAN_VALIDAS. 
+       - potential data or precision loss converting from int32 to decimal
+   WARNING: Error in constraint expression for link LNK_REGISTRA_TRAN_NO_VALIDAS. 
+       - potential data or precision loss converting from int32 to decimal
+
+=+=+=+=
+      END DSSUBRECORD
+      ValidationStatus "0"
+      StageType "CTransformerStage"
+      BlockSize "0"
+      SKKeySourceType "file"
+      StageVars "CStageVar"
+      BEGIN DSSUBRECORD
+         Name "vAmount"
+         Expression "DecimalToString(LNK_A_TRF_VALIDA_REGLAS.amount,\"suppress_zero\")"
+         SqlType "12"
+         ParsedExpression "DecimalToString(LNK_A_TRF_VALIDA_REGLAS.amount, \"suppress_zero\")"
+         SourceColumn "LNK_A_TRF_VALIDA_REGLAS.amount"
+         Precision "255"
+         ColScale "0"
+         ExtendedPrecision "0"
+      END DSSUBRECORD
+      StageVarsMinimised "0"
+      LoopVarsMaximised "0"
+      MaxLoopIterations "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S148P1"
+      OLEType "CTrxInput"
+      Readonly "0"
+      Name "LNK_A_TRF_VALIDA_REGLAS"
+      Partner "V318S4|V318S4P1"
+      LinkType "1"
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RTColumnProp"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "Schema"
+         Value =+=+=+=
+record
+(
+  transaction_id:int32;
+  customer_id:int32;
+  amount:decimal[12,2];
+  status:string[max=20];
+)
+=+=+=+=
+      END DSSUBRECORD
+      MultiRow "0"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S148P2"
+      OLEType "CTrxOutput"
+      Readonly "0"
+      Name "LNK_REGISTRA_TRAN_VALIDAS"
+      Partner "V0S153|V0S153P1"
+      Constraint "LNK_A_TRF_VALIDA_REGLAS.amount >0 AND LNK_A_TRF_VALIDA_REGLAS.status = 'ACTIVE'"
+      Reject "0"
+      ErrorPin "0"
+      RowLimit "0"
+      ParsedConstraint "LNK_A_TRF_VALIDA_REGLAS.amount > 0 AND LNK_A_TRF_VALIDA_REGLAS.status = 'ACTIVE'"
+      SourceColumns "LNK_A_TRF_VALIDA_REGLAS.amount;LNK_A_TRF_VALIDA_REGLAS.status"
+      Columns "COutputColumn"
+      BEGIN DSSUBRECORD
+         Name "transaction_id"
+         SqlType "4"
+         Precision "0"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Derivation "LNK_A_TRF_VALIDA_REGLAS.transaction_id"
+         Group "0"
+         ParsedDerivation "LNK_A_TRF_VALIDA_REGLAS.transaction_id"
+         SourceColumn "LNK_A_TRF_VALIDA_REGLAS.transaction_id"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "transaction_id"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "customer_id"
+         SqlType "4"
+         Precision "0"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Derivation "LNK_A_TRF_VALIDA_REGLAS.customer_id"
+         Group "0"
+         ParsedDerivation "LNK_A_TRF_VALIDA_REGLAS.customer_id"
+         SourceColumn "LNK_A_TRF_VALIDA_REGLAS.customer_id"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "customer_id"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "amount"
+         SqlType "12"
+         Precision "12"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Derivation "vAmount"
+         Group "0"
+         ParsedDerivation "vAmount"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         StageVars "vAmount"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "amount"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "status"
+         SqlType "12"
+         Precision "20"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Derivation "LNK_A_TRF_VALIDA_REGLAS.status"
+         Group "0"
+         ParsedDerivation "LNK_A_TRF_VALIDA_REGLAS.status"
+         SourceColumn "LNK_A_TRF_VALIDA_REGLAS.status"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "status"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "Schema"
+         Value =+=+=+=
+record
+(
+  transaction_id:int32;
+  customer_id:int32;
+  amount:string[max=12];
+  status:string[max=20];
+)
+=+=+=+=
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "DiskWriteInc"
+         Value "1048576"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "BufFreeRun"
+         Value "50"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "MaxMemBufSize"
+         Value "3145728"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "QueueUpperSize"
+         Value "0"
+      END DSSUBRECORD
+      LeftTextPos "648"
+      TopTextPos "390"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S148P3"
+      OLEType "CTrxOutput"
+      Readonly "0"
+      Name "LNK_REGISTRA_TRAN_NO_VALIDAS"
+      Partner "V0S151|V0S151P1"
+      Constraint "NOT (LNK_A_TRF_VALIDA_REGLAS.amount >0 AND LNK_A_TRF_VALIDA_REGLAS.status = 'ACTIVE')"
+      Reject "0"
+      ErrorPin "0"
+      RowLimit "0"
+      ParsedConstraint "NOT(LNK_A_TRF_VALIDA_REGLAS.amount > 0 AND LNK_A_TRF_VALIDA_REGLAS.status = 'ACTIVE')"
+      SourceColumns "LNK_A_TRF_VALIDA_REGLAS.amount;LNK_A_TRF_VALIDA_REGLAS.status"
+      Columns "COutputColumn"
+      BEGIN DSSUBRECORD
+         Name "transaction_id"
+         SqlType "4"
+         Precision "0"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Derivation "LNK_A_TRF_VALIDA_REGLAS.transaction_id"
+         Group "0"
+         ParsedDerivation "LNK_A_TRF_VALIDA_REGLAS.transaction_id"
+         SourceColumn "LNK_A_TRF_VALIDA_REGLAS.transaction_id"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "transaction_id"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "customer_id"
+         SqlType "4"
+         Precision "0"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Derivation "LNK_A_TRF_VALIDA_REGLAS.customer_id"
+         Group "0"
+         ParsedDerivation "LNK_A_TRF_VALIDA_REGLAS.customer_id"
+         SourceColumn "LNK_A_TRF_VALIDA_REGLAS.customer_id"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "customer_id"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "amount"
+         SqlType "12"
+         Precision "12"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Derivation "vAmount"
+         Group "0"
+         ParsedDerivation "vAmount"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         StageVars "vAmount"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "amount"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "status"
+         SqlType "12"
+         Precision "20"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Derivation "LNK_A_TRF_VALIDA_REGLAS.status"
+         Group "0"
+         ParsedDerivation "LNK_A_TRF_VALIDA_REGLAS.status"
+         SourceColumn "LNK_A_TRF_VALIDA_REGLAS.status"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "status"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "Schema"
+         Value =+=+=+=
+record
+(
+  transaction_id:int32;
+  customer_id:int32;
+  amount:string[max=12];
+  status:string[max=20];
+)
+=+=+=+=
+      END DSSUBRECORD
+      LeftTextPos "528"
+      TopTextPos "492"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S151"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "Peek_151"
+      NextID "2"
+      InputPins "V0S151P1"
+      StageType "PxPeek"
+      AllowColumnMapping "0"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "all"
+         Value " "
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "nrecs"
+         Value "10"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "dataset"
+         Value " "
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "name"
+         Value "name"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "columns"
+         Value " "
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "selection"
+         Value " "
+      END DSSUBRECORD
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S151P1"
+      OLEType "CCustomInput"
+      Readonly "0"
+      Name "LNK_REGISTRA_TRAN_NO_VALIDAS"
+      Partner "V0S148|V0S148P3"
+      LinkType "1"
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RTColumnProp"
+         Value "0"
+      END DSSUBRECORD
+      TransactionSize "0"
+      TXNBehaviour "0"
+      EnableTxGroup "0"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S153"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "DS_TRAN_VALIDAS"
+      NextID "2"
+      InputPins "V0S153P1"
+      StageType "PxDataSet"
+      AllowColumnMapping "0"
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S153P1"
+      OLEType "CCustomInput"
+      Readonly "0"
+      Name "LNK_REGISTRA_TRAN_VALIDAS"
+      Partner "V0S148|V0S148P2"
+      LinkType "1"
+      ConditionNotMet "fail"
+      LookupFail "fail"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "dataset"
+         Value "/interfaces/DESA_FAC_INTSAF/INTERFACES/work/#V_DS_TRF_VALIDAS#"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "datasetmode"
+         Value ">| [ds"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RTColumnProp"
+         Value "0"
+      END DSSUBRECORD
+      TransactionSize "0"
+      TXNBehaviour "0"
+      EnableTxGroup "0"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V318S4"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "DS_EXT_TRANSACCIONS"
+      NextID "2"
+      OutputPins "V318S4P1"
+      StageType "PxDataSet"
+      AllowColumnMapping "0"
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V318S4P1"
+      OLEType "CCustomOutput"
+      Readonly "0"
+      Name "LNK_A_TRF_VALIDA_REGLAS"
+      Partner "V0S148|V0S148P1"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "dataset"
+         Value "/interfaces/DESA_FAC_INTSAF/INTERFACES/work/#V_DS_TRANSACCIONES#"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "missingcolmode"
+         Value " "
+      END DSSUBRECORD
+      Columns "COutputColumn"
+      BEGIN DSSUBRECORD
+         Name "transaction_id"
+         SqlType "4"
+         Precision "0"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "transaction_id"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "customer_id"
+         SqlType "4"
+         Precision "0"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "customer_id"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "amount"
+         SqlType "3"
+         Precision "12"
+         Scale "2"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "amount"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "status"
+         SqlType "12"
+         Precision "20"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         TableDef "Saved\\LNK_A_DS_EXT_TRANSACCIONS\\LNK_A_DS_EXT_TRANSACCIONSDD"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ColumnReference "status"
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "DiskWriteInc"
+         Value "1048576"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "BufFreeRun"
+         Value "50"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "MaxMemBufSize"
+         Value "3145728"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "QueueUpperSize"
+         Value "0"
+      END DSSUBRECORD
+      LeftTextPos "180"
+      TopTextPos "408"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V3A0"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V3A0"
+      NextID "0"
+      AnnotationType "1"
+      TextFont "MS Shell Dlg\\8\\0\\0\\0\\400\\0"
+      TextHorizontalJustification "0"
+      TextVerticalJustification "1"
+      TextColor "0"
+      BackgroundColor "12713983"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+END DSJOB
+BEGIN DSJOB
+   Identifier "SEQ_PROCESO_TRANSACCIONES"
+   DateModified "2026-02-16"
+   TimeModified "13.53.58"
+   BEGIN DSRECORD
+      Identifier "ROOT"
+      OLEType "CJobDefn"
+      Readonly "0"
+      Name "SEQ_PROCESO_TRANSACCIONES"
+      Description "NOMBRE: SEQ_FAC_PPAL_PLANES_FINANCIACION_LT."
+      NextID "21"
+      Container "V0"
+      FullDescription =+=+=+=
+DESCRIPCION:Proceso de orquestacion y control de extraccion de transacciones
+
+EXTRACCION:  Se simulan registros
+TRANSF:  Se aplican reglas y normalizacion
+CARGA: Generacion de archivo de salida
+
+CONTROL DE REGISTROS: Lectura de los LINKS  por donde pasa la data mediante  comando dsjob -linkinfo, se captura  en la extraccion  y en las salidas de la transformacion 
+=+=+=+=
+      JobVersion "56.0.0"
+      JobControlCode =+=+=+=
+* Tokens were replaced below as follows:
+* IdV0S0%%UserVar%%0 <= UVA_INICIO.DS_EXTRACCION
+* IdV0S0%%UserVar%%1 <= UVA_INICIO.DS_TRANSFOR
+* IdV0S0%%UserVar%%2 <= UVA_INICIO.FILE_OUTPÚT
+* IdV0S110%%UserVar%%3 <= UVA_CONTEO_EXT.vConteoExt
+* IdV0S127%%UserVar%%4 <= UVA_CONTEO_TRF.vContValidas
+* IdV0S127%%UserVar%%5 <= UVA_CONTEO_TRF.vContNoValidas
+* IdV0S106%%Result2%%6 <= JOB_TRF_TRANSACCIONES.$UserStatus
+* IdV0S106%%Result1%%7 <= JOB_TRF_TRANSACCIONES.$JobStatus
+* IdV0S106%%Name%%8 <= JOB_TRF_TRANSACCIONES.$JobName
+* IdV0S107%%Result2%%9 <= JOB_LOAD_TRANSACCIONES.$UserStatus
+* IdV0S107%%Result1%%10 <= JOB_LOAD_TRANSACCIONES.$JobStatus
+* IdV0S107%%Name%%11 <= JOB_LOAD_TRANSACCIONES.$JobName
+* IdV0S119%%Result1%%12 <= ExeContValidas.$ReturnValue
+* IdV0S119%%Name%%13 <= ExeContValidas.$CommandName
+* IdV0S119%%Result2%%14 <= ExeContValidas.$CommandOutput
+* IdV0S124%%Result1%%15 <= ExecVALIDACION.$ReturnValue
+* IdV0S124%%Name%%16 <= ExecVALIDACION.$CommandName
+* IdV0S124%%Result2%%17 <= ExecVALIDACION.$CommandOutput
+* IdV0S134%%Result1%%18 <= EXEC_INCIDENCIA_EN_CANTIDAD_DE_REGISTROS.$ReturnValue
+* IdV0S134%%Name%%19 <= EXEC_INCIDENCIA_EN_CANTIDAD_DE_REGISTROS.$CommandName
+* IdV0S134%%Result2%%20 <= EXEC_INCIDENCIA_EN_CANTIDAD_DE_REGISTROS.$CommandOutput
+* IdV12S0%%Result1%%21 <= ExeCont_NO_Validas.$ReturnValue
+* IdV12S0%%Name%%22 <= ExeCont_NO_Validas.$CommandName
+* IdV12S0%%Result2%%23 <= ExeCont_NO_Validas.$CommandOutput
+* IdV13S0%%Result1%%24 <= ExeConteoExt.$ReturnValue
+* IdV13S0%%Name%%25 <= ExeConteoExt.$CommandName
+* IdV13S0%%Result2%%26 <= ExeConteoExt.$CommandOutput
+* IdV0S145%%Result2%%27 <= JOB_EXT_TRANSACCIONES.$UserStatus
+* IdV0S145%%Result1%%28 <= JOB_EXT_TRANSACCIONES.$JobStatus
+* IdV0S145%%Name%%29 <= JOB_EXT_TRANSACCIONES.$JobName
+* IdV0S154%%Result1%%30 <= EXEC_FIN.$ReturnValue
+* IdV0S154%%Name%%31 <= EXEC_FIN.$CommandName
+* IdV0S154%%Result2%%32 <= EXEC_FIN.$CommandOutput
+* IdV0S171%%Param%%33 <= Excep_Handler.$ErrSource
+* IdV0S171%%Param%%34 <= Excep_Handler.$ErrNumber
+* IdV0S171%%Param%%35 <= Excep_Handler.$ErrMessage
+*
+*** [Generated at 2026-02-16 13:53:53 - 11.7.1.0]
+   $INCLUDE DSINCLUDE DSJ_XFUNCS.H
+****************************************
+* Graphical Sequencer generated code for Job SEQ_PROCESO_TRANSACCIONES
+****************************************
+   
+   handle$list = \"\"
+   id$list = \"\"
+   abort$list = \"\"
+   b$Abandoning = @False
+   b$CPRestarted = @False
+   b$InErrorRef = @False
+   rpt$all = \"\"
+*** Create new checkpoint for sequence if not restarting
+   If DSCheckPointExists(DSJ.ME, cp$dtm) Then GoTo L$RESTART
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0015\\Starting new run of checkpointed Sequence job\", \"\"), \"@Coordinator\")
+   If (Not(DSCheckPointValidate(DSJ.ME, cp$msg))) Then
+      err$source = \"@Coordinator\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0016\\Error creating checkpoint record<L>%1\", cp$msg)
+      msg$id = \"@Coordinator\"; GoTo L$ERROR
+   End
+   GoTo L$MAINSTART
+L$RESTART:
+*** Validate restarted job matches prior state
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0017\\Sequence job is being restarted after failure<L>Checkpoint record last modified at %1\", cp$dtm), \"@Coordinator\")
+   b$CPRestarted = @True
+   If Not(DSCheckPointValidate(DSJ.ME, cp$msg)) Then
+      Call DSLogWarn(cp$msg, \"@Coordinator\")
+   End
+L$MAINSTART:
+*** Sequence start point
+   GoTo L$V0S0$START
+L$RETURN$1:
+   GoTo L$WAITFORJOB
+**************************************************
+L$V0S0$START:
+*** Set user variables: \"UVA_INICIO\"
+   IdV0S0%%UserVar%%0 = (\"TMP_TRAN.ds\")
+   IdV0S0%%UserVar%%1 = (\"TMP_TRAN_VALIDAS.ds\")
+   IdV0S0%%UserVar%%2 = (\"output.csv\")
+   GoTo L$V0S145$START
+L$V0S0$RETURN$1:
+   GoTo L$RETURN$1
+**************************************************
+L$V0S106$START:
+*** Activity \"JOB_TRF_TRANSACCIONES\": Initialize job
+   b$InErrorRef$V0S106 = b$InErrorRef
+   h$V0S106 = DSAttachJob(\"JOB_TRF_TRANSACCIONES\", DSJ.ERRNONE)
+   If (Not(h$V0S106)) Then
+      err$source = \"JOB_TRF_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0001\\Error calling DSAttachJob(%1)<L>%2\", \"JOB_TRF_TRANSACCIONES\":@FM:DSGetLastErrorMsg())
+      msg$id = \"@JOB_TRF_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   If DSGetJobInfo(h$V0S106, DSJ.JOBMULTIINVOKABLE) Then
+      jb$V0S106 = \"JOB_TRF_TRANSACCIONES\":'.':\"JOB_TRF_TRANSACCIONES\"
+   End Else
+      jb$V0S106 = \"JOB_TRF_TRANSACCIONES\"
+   End
+   dummy$ = DSDetachJob(h$V0S106)
+   b$V0S106skipping = @False
+   h$V0S106$cp = \"h$V0S106\"
+   If DSCheckPointGetValue(DSJ.ME, h$V0S106$cp, cp$value) = DSJE.NOERROR Then
+      Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0021\\Skipped run of job '%1' on restart\", jb$V0S106), \"@JOB_TRF_TRANSACCIONES\")
+      job$V0S106$status = Raise(cp$value<1>)
+      job$V0S106$userstatus = Raise(cp$value<2>)
+      IdV0S106%%Result2%%6 = job$V0S106$userstatus
+      IdV0S106%%Result1%%7 = job$V0S106$status
+      IdV0S106%%Name%%8 = jb$V0S106
+      b$V0S106skipping = @True
+      Goto L$V0S106$SKIPPED
+   End
+   h$V0S106 = DSAttachJob(jb$V0S106, DSJ.ERRNONE)
+   If (Not(h$V0S106)) Then
+      err$source = \"JOB_TRF_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0001\\Error calling DSAttachJob(%1)<L>%2\", jb$V0S106:@FM:DSGetLastErrorMsg())
+      msg$id = \"@JOB_TRF_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   h$V0S106 = DSPrepareJob(h$V0S106)
+   If (Not(h$V0S106)) Then
+      err$source = \"JOB_TRF_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0012\\Error calling DSPrepareJob(%1)<L>%2\", jb$V0S106:@FM:DSGetLastErrorMsg())
+      msg$id = \"@JOB_TRF_TRANSACCIONES\"; GoTo L$ERROR
+   End
+L$V0S106$PREPARED:
+   p$V0S106$1 = (IdV0S0%%UserVar%%0)
+   err$code = DSSetParam(h$V0S106, \"V_DS_TRANSACCIONES\", p$V0S106$1)
+   If (err$code <> DSJE.NOERROR) Then
+      err$source = \"JOB_TRF_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0002\\Error calling DSSetParam(%1), code=%2[E]\", \"V_DS_TRANSACCIONES\":@FM:err$code)
+      msg$id = \"@JOB_TRF_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   p$V0S106$2 = (IdV0S0%%UserVar%%1)
+   err$code = DSSetParam(h$V0S106, \"V_DS_TRF_VALIDAS\", p$V0S106$2)
+   If (err$code <> DSJE.NOERROR) Then
+      err$source = \"JOB_TRF_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0002\\Error calling DSSetParam(%1), code=%2[E]\", \"V_DS_TRF_VALIDAS\":@FM:err$code)
+      msg$id = \"@JOB_TRF_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   err$code = DSRunJob(h$V0S106, DSJ.RUNNORMAL)
+   If (err$code <> DSJE.NOERROR) Then
+      err$source = \"JOB_TRF_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0003\\Error calling DSRunJob(%1), code=%2[E]\", jb$V0S106:@FM:err$code)
+      msg$id = \"@JOB_TRF_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   handle$list<-1> = h$V0S106
+   id$list<-1> = \"V0S106\"
+   GoTo L$V0S110$RETURN$1
+**************************************************
+L$V0S106$FINISHED:
+   job$V0S106$status = DSGetJobInfo(h$V0S106, DSJ.JOBSTATUS)
+   job$V0S106$userstatus = DSGetJobInfo(h$V0S106, DSJ.USERSTATUS)
+   IdV0S106%%Result2%%6 = job$V0S106$userstatus
+   IdV0S106%%Result1%%7 = job$V0S106$status
+   IdV0S106%%Name%%8 = jb$V0S106
+   If (job$V0S106$status <> DSJS.RUNOK) Then
+      Call DSLogWarn(DSMakeMsg(\"DSTAGE_JSG_M_0030\\Job %1 did not finish OK, status = '%2'\", jb$V0S106:@FM:DSTranslateCode(job$V0S106$status)), \"@JOB_TRF_TRANSACCIONES\")
+   End
+   rpt$V0S106 = DSMakeJobReport(h$V0S106, 1, \"CRLF\")
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0004\\Report on job: %1<L>%2\", jb$V0S106:@FM:rpt$V0S106), \"@JOB_TRF_TRANSACCIONES\")
+   rpt$all := \"\\n\":rpt$V0S106 ;* accumulate job reports
+   dummy$ = DSDetachJob(h$V0S106)
+   If b$InErrorRef$V0S106 Or (job$V0S106$status <> DSJS.RUNOK And job$V0S106$status <> DSJS.RUNWARN) Then Goto L$V0S106$SKIPPED
+   cp$value = Lower(job$V0S106$status)
+   cp$value<2> = Lower(job$V0S106$userstatus)
+   dummy$ = DSCheckPointSetValue(DSJ.ME, h$V0S106$cp, cp$value)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0025\\Checkpointed run of job '%1'\", jb$V0S106), \"@JOB_TRF_TRANSACCIONES\")
+**************************************************
+L$V0S106$SKIPPED:
+   If b$Abandoning Then GoTo L$WAITFORJOB
+   b$V0S106else = @True
+   If (job$V0S106$status = DSJS.RUNOK) Then b$V0S106else = @False; GoTo L$V0S119$START
+L$V0S106$RETURN$1:
+   If b$V0S106else Then GoTo L$V0S160$START
+L$V0S106$RETURN$2:
+   If b$V0S106skipping Then GoTo L$V0S110$RETURN$1
+   GoTo L$WAITFORJOB
+**************************************************
+L$V0S107$START:
+*** Activity \"JOB_LOAD_TRANSACCIONES\": Initialize job
+   b$InErrorRef$V0S107 = b$InErrorRef
+   h$V0S107 = DSAttachJob(\"JOB_LOAD_TRANSACCIONES\", DSJ.ERRNONE)
+   If (Not(h$V0S107)) Then
+      err$source = \"JOB_LOAD_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0001\\Error calling DSAttachJob(%1)<L>%2\", \"JOB_LOAD_TRANSACCIONES\":@FM:DSGetLastErrorMsg())
+      msg$id = \"@JOB_LOAD_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   If DSGetJobInfo(h$V0S107, DSJ.JOBMULTIINVOKABLE) Then
+      jb$V0S107 = \"JOB_LOAD_TRANSACCIONES\":'.':\"JOB_LOAD_TRANSACCIONES\"
+   End Else
+      jb$V0S107 = \"JOB_LOAD_TRANSACCIONES\"
+   End
+   dummy$ = DSDetachJob(h$V0S107)
+   b$V0S107skipping = @False
+   h$V0S107$cp = \"h$V0S107\"
+   If DSCheckPointGetValue(DSJ.ME, h$V0S107$cp, cp$value) = DSJE.NOERROR Then
+      Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0021\\Skipped run of job '%1' on restart\", jb$V0S107), \"@JOB_LOAD_TRANSACCIONES\")
+      job$V0S107$status = Raise(cp$value<1>)
+      job$V0S107$userstatus = Raise(cp$value<2>)
+      IdV0S107%%Result2%%9 = job$V0S107$userstatus
+      IdV0S107%%Result1%%10 = job$V0S107$status
+      IdV0S107%%Name%%11 = jb$V0S107
+      b$V0S107skipping = @True
+      Goto L$V0S107$SKIPPED
+   End
+   h$V0S107 = DSAttachJob(jb$V0S107, DSJ.ERRNONE)
+   If (Not(h$V0S107)) Then
+      err$source = \"JOB_LOAD_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0001\\Error calling DSAttachJob(%1)<L>%2\", jb$V0S107:@FM:DSGetLastErrorMsg())
+      msg$id = \"@JOB_LOAD_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   h$V0S107 = DSPrepareJob(h$V0S107)
+   If (Not(h$V0S107)) Then
+      err$source = \"JOB_LOAD_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0012\\Error calling DSPrepareJob(%1)<L>%2\", jb$V0S107:@FM:DSGetLastErrorMsg())
+      msg$id = \"@JOB_LOAD_TRANSACCIONES\"; GoTo L$ERROR
+   End
+L$V0S107$PREPARED:
+   p$V0S107$1 = (IdV0S0%%UserVar%%1)
+   err$code = DSSetParam(h$V0S107, \"V_DS_TRF_VALIDAS\", p$V0S107$1)
+   If (err$code <> DSJE.NOERROR) Then
+      err$source = \"JOB_LOAD_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0002\\Error calling DSSetParam(%1), code=%2[E]\", \"V_DS_TRF_VALIDAS\":@FM:err$code)
+      msg$id = \"@JOB_LOAD_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   p$V0S107$2 = (IdV0S0%%UserVar%%2)
+   err$code = DSSetParam(h$V0S107, \"V_FILE_SALIDA\", p$V0S107$2)
+   If (err$code <> DSJE.NOERROR) Then
+      err$source = \"JOB_LOAD_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0002\\Error calling DSSetParam(%1), code=%2[E]\", \"V_FILE_SALIDA\":@FM:err$code)
+      msg$id = \"@JOB_LOAD_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   err$code = DSRunJob(h$V0S107, DSJ.RUNNORMAL)
+   If (err$code <> DSJE.NOERROR) Then
+      err$source = \"JOB_LOAD_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0003\\Error calling DSRunJob(%1), code=%2[E]\", jb$V0S107:@FM:err$code)
+      msg$id = \"@JOB_LOAD_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   handle$list<-1> = h$V0S107
+   id$list<-1> = \"V0S107\"
+   GoTo L$V0S164$RETURN$2
+**************************************************
+L$V0S107$FINISHED:
+   job$V0S107$status = DSGetJobInfo(h$V0S107, DSJ.JOBSTATUS)
+   job$V0S107$userstatus = DSGetJobInfo(h$V0S107, DSJ.USERSTATUS)
+   IdV0S107%%Result2%%9 = job$V0S107$userstatus
+   IdV0S107%%Result1%%10 = job$V0S107$status
+   IdV0S107%%Name%%11 = jb$V0S107
+   If (job$V0S107$status <> DSJS.RUNOK) Then
+      Call DSLogWarn(DSMakeMsg(\"DSTAGE_JSG_M_0030\\Job %1 did not finish OK, status = '%2'\", jb$V0S107:@FM:DSTranslateCode(job$V0S107$status)), \"@JOB_LOAD_TRANSACCIONES\")
+   End
+   rpt$V0S107 = DSMakeJobReport(h$V0S107, 1, \"CRLF\")
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0004\\Report on job: %1<L>%2\", jb$V0S107:@FM:rpt$V0S107), \"@JOB_LOAD_TRANSACCIONES\")
+   rpt$all := \"\\n\":rpt$V0S107 ;* accumulate job reports
+   dummy$ = DSDetachJob(h$V0S107)
+   If b$InErrorRef$V0S107 Or (job$V0S107$status <> DSJS.RUNOK And job$V0S107$status <> DSJS.RUNWARN) Then Goto L$V0S107$SKIPPED
+   cp$value = Lower(job$V0S107$status)
+   cp$value<2> = Lower(job$V0S107$userstatus)
+   dummy$ = DSCheckPointSetValue(DSJ.ME, h$V0S107$cp, cp$value)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0025\\Checkpointed run of job '%1'\", jb$V0S107), \"@JOB_LOAD_TRANSACCIONES\")
+**************************************************
+L$V0S107$SKIPPED:
+   If b$Abandoning Then GoTo L$WAITFORJOB
+   b$V0S107else = @True
+   If (job$V0S107$status = DSJS.RUNOK) Then b$V0S107else = @False; GoTo L$V0S154$START
+L$V0S107$RETURN$1:
+   If b$V0S107else Then GoTo L$V0S157$START
+L$V0S107$RETURN$2:
+   If b$V0S107skipping Then GoTo L$V0S164$RETURN$2
+   GoTo L$WAITFORJOB
+**************************************************
+L$V0S110$START:
+*** Set user variables: \"UVA_CONTEO_EXT\"
+   IdV0S110%%UserVar%%3 = (TRIM(Field(Convert(@FM, '', IdV13S0%%Result2%%26), ' ', 5)))
+   GoTo L$V0S106$START
+L$V0S110$RETURN$1:
+   GoTo L$V13S0$RETURN$1
+**************************************************
+L$V0S119$START:
+*** Activity \"ExeContValidas\": Execute command
+   x$V0S119$cp = \"x$V0S119\"
+   If DSCheckPointGetValue(DSJ.ME, x$V0S119$cp, cp$value) = DSJE.NOERROR Then
+   x$masked$cmd = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+   x$masked$output = ''
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+      Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0023\\Skipped execution of command '%1' on restart\", x$masked$cmd), \"@ExeContValidas\")
+      x$V0S119 = Raise(cp$value<1>)
+      x$V0S119$output = Raise(cp$value<2>)
+      IdV0S119%%Result1%%12 = x$V0S119
+      IdV0S119%%Name%%13 = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+      IdV0S119%%Result2%%14 = x$V0S119$output
+      Goto L$V0S119$SKIPPED
+   End
+   x$cmd = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+   x$type = (If System(91) = 1 Then \"NT\" Else \"UNIX\")
+   Call DSExecute(x$type, x$cmd, x$V0S119$output, x$V0S119)
+   x$masked$cmd = x$cmd
+   x$masked$output = x$V0S119$output
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0007\\Executed: %1<L>Reply=%2<L>Output from command ====><L>%3\", x$masked$cmd:@FM:x$V0S119:@FM:Lower(x$masked$output)), \"@ExeContValidas\")
+   IdV0S119%%Result1%%12 = x$V0S119
+   IdV0S119%%Name%%13 = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+   IdV0S119%%Result2%%14 = x$V0S119$output
+   If x$V0S119 <> 0 Then
+      Call DSLogWarn(DSMakeMsg(\"DSTAGE_JSG_M_0043\\Command %1 did not finish OK, reply = '%2'\", \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\":@FM:x$V0S119), \"@ExeContValidas\")
+   End
+   If (x$V0S119 <> 0) Then
+      err$source = \"ExeContValidas\"; err$number = 1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0044\\Unhandled failure (%1) encountered executing command %2\", x$V0S119:@FM:\"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\")
+      msg$id = \"@ExeContValidas\"; GoTo L$ERROR
+   End
+   x$masked$cmd = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+   x$masked$output = ''
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+   If b$InErrorRef Or (x$V0S119 <> 0) Then Goto L$V0S119$SKIPPED
+   cp$value = Lower(x$V0S119)
+   cp$value<2> = Lower(x$V0S119$output)
+   dummy$ = DSCheckPointSetValue(DSJ.ME, x$V0S119$cp, cp$value)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0027\\Checkpointed execution of command '%1'\", x$masked$cmd), \"@ExeContValidas\")
+**************************************************
+L$V0S119$SKIPPED:
+   GoTo L$V12S0$START
+L$V0S119$RETURN$1:
+   GoTo L$V0S106$RETURN$1
+**************************************************
+L$V0S124$START:
+*** Activity \"ExecVALIDACION\": Execute command
+   x$V0S124$cp = \"x$V0S124\"
+   If DSCheckPointGetValue(DSJ.ME, x$V0S124$cp, cp$value) = DSJE.NOERROR Then
+   x$masked$cmd = \"echo \":'\"':\"TOTAL_FUENTE:\":IdV0S110%%UserVar%%3:\"  VALIDAS:\":IdV0S127%%UserVar%%4:\"  NO_VALIDAS: \":IdV0S127%%UserVar%%5:\" \":'\"':\"  \"
+   x$masked$output = ''
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+      Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0023\\Skipped execution of command '%1' on restart\", x$masked$cmd), \"@ExecVALIDACION\")
+      x$V0S124 = Raise(cp$value<1>)
+      x$V0S124$output = Raise(cp$value<2>)
+      IdV0S124%%Result1%%15 = x$V0S124
+      IdV0S124%%Name%%16 = \"echo \":'\"':\"TOTAL_FUENTE:\":IdV0S110%%UserVar%%3:\"  VALIDAS:\":IdV0S127%%UserVar%%4:\"  NO_VALIDAS: \":IdV0S127%%UserVar%%5:\" \":'\"':\"  \"
+      IdV0S124%%Result2%%17 = x$V0S124$output
+      Goto L$V0S124$SKIPPED
+   End
+   x$cmd = \"echo \":'\"':\"TOTAL_FUENTE:\":IdV0S110%%UserVar%%3:\"  VALIDAS:\":IdV0S127%%UserVar%%4:\"  NO_VALIDAS: \":IdV0S127%%UserVar%%5:\" \":'\"':\"  \"
+   x$type = (If System(91) = 1 Then \"NT\" Else \"UNIX\")
+   Call DSExecute(x$type, x$cmd, x$V0S124$output, x$V0S124)
+   x$masked$cmd = x$cmd
+   x$masked$output = x$V0S124$output
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0007\\Executed: %1<L>Reply=%2<L>Output from command ====><L>%3\", x$masked$cmd:@FM:x$V0S124:@FM:Lower(x$masked$output)), \"@ExecVALIDACION\")
+   IdV0S124%%Result1%%15 = x$V0S124
+   IdV0S124%%Name%%16 = \"echo \":'\"':\"TOTAL_FUENTE:\":IdV0S110%%UserVar%%3:\"  VALIDAS:\":IdV0S127%%UserVar%%4:\"  NO_VALIDAS: \":IdV0S127%%UserVar%%5:\" \":'\"':\"  \"
+   IdV0S124%%Result2%%17 = x$V0S124$output
+   If x$V0S124 <> 0 Then
+      Call DSLogWarn(DSMakeMsg(\"DSTAGE_JSG_M_0043\\Command %1 did not finish OK, reply = '%2'\", \"echo \":'\"':\"TOTAL_FUENTE:\":IdV0S110%%UserVar%%3:\"  VALIDAS:\":IdV0S127%%UserVar%%4:\"  NO_VALIDAS: \":IdV0S127%%UserVar%%5:\" \":'\"':\"  \":@FM:x$V0S124), \"@ExecVALIDACION\")
+   End
+   If (x$V0S124 <> 0) Then
+      err$source = \"ExecVALIDACION\"; err$number = 1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0044\\Unhandled failure (%1) encountered executing command %2\", x$V0S124:@FM:\"echo \":'\"':\"TOTAL_FUENTE:\":IdV0S110%%UserVar%%3:\"  VALIDAS:\":IdV0S127%%UserVar%%4:\"  NO_VALIDAS: \":IdV0S127%%UserVar%%5:\" \":'\"':\"  \")
+      msg$id = \"@ExecVALIDACION\"; GoTo L$ERROR
+   End
+   x$masked$cmd = \"echo \":'\"':\"TOTAL_FUENTE:\":IdV0S110%%UserVar%%3:\"  VALIDAS:\":IdV0S127%%UserVar%%4:\"  NO_VALIDAS: \":IdV0S127%%UserVar%%5:\" \":'\"':\"  \"
+   x$masked$output = ''
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+   If b$InErrorRef Or (x$V0S124 <> 0) Then Goto L$V0S124$SKIPPED
+   cp$value = Lower(x$V0S124)
+   cp$value<2> = Lower(x$V0S124$output)
+   dummy$ = DSCheckPointSetValue(DSJ.ME, x$V0S124$cp, cp$value)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0027\\Checkpointed execution of command '%1'\", x$masked$cmd), \"@ExecVALIDACION\")
+**************************************************
+L$V0S124$SKIPPED:
+   GoTo L$V0S164$START
+L$V0S124$RETURN$1:
+   GoTo L$V0S127$RETURN$1
+**************************************************
+L$V0S127$START:
+*** Set user variables: \"UVA_CONTEO_TRF\"
+   IdV0S127%%UserVar%%4 = (TRIM(Field(Convert(@FM, '', IdV0S119%%Result2%%14), ' ', 5)))
+   IdV0S127%%UserVar%%5 = (TRIM(Field(Convert(@FM, '', IdV12S0%%Result2%%23), ' ', 5)))
+   GoTo L$V0S124$START
+L$V0S127$RETURN$1:
+   GoTo L$V12S0$RETURN$1
+**************************************************
+L$V0S134$START:
+*** Activity \"EXEC_INCIDENCIA_EN_CANTIDAD_DE_REGISTROS\": Execute command
+   x$V0S134$cp = \"x$V0S134\"
+   If DSCheckPointGetValue(DSJ.ME, x$V0S134$cp, cp$value) = DSJE.NOERROR Then
+   x$masked$cmd = \"echo \":'\"':\"=====>>  ALERTA     POR   VALIDACION DE CANTIDAD DE  REGISTROSS !!!  \":'\"':\" \"
+   x$masked$output = ''
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+      Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0023\\Skipped execution of command '%1' on restart\", x$masked$cmd), \"@EXEC_INCIDENCIA_EN_CANTIDAD_DE_REGISTROS\")
+      x$V0S134 = Raise(cp$value<1>)
+      x$V0S134$output = Raise(cp$value<2>)
+      IdV0S134%%Result1%%18 = x$V0S134
+      IdV0S134%%Name%%19 = \"echo \":'\"':\"=====>>  ALERTA     POR   VALIDACION DE CANTIDAD DE  REGISTROSS !!!  \":'\"':\" \"
+      IdV0S134%%Result2%%20 = x$V0S134$output
+      Goto L$V0S134$SKIPPED
+   End
+   x$cmd = \"echo \":'\"':\"=====>>  ALERTA     POR   VALIDACION DE CANTIDAD DE  REGISTROSS !!!  \":'\"':\" \"
+   x$type = (If System(91) = 1 Then \"NT\" Else \"UNIX\")
+   Call DSExecute(x$type, x$cmd, x$V0S134$output, x$V0S134)
+   x$masked$cmd = x$cmd
+   x$masked$output = x$V0S134$output
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0007\\Executed: %1<L>Reply=%2<L>Output from command ====><L>%3\", x$masked$cmd:@FM:x$V0S134:@FM:Lower(x$masked$output)), \"@EXEC_INCIDENCIA_EN_CANTIDAD_DE_REGISTROS\")
+   IdV0S134%%Result1%%18 = x$V0S134
+   IdV0S134%%Name%%19 = \"echo \":'\"':\"=====>>  ALERTA     POR   VALIDACION DE CANTIDAD DE  REGISTROSS !!!  \":'\"':\" \"
+   IdV0S134%%Result2%%20 = x$V0S134$output
+   If x$V0S134 <> 0 Then
+      Call DSLogWarn(DSMakeMsg(\"DSTAGE_JSG_M_0043\\Command %1 did not finish OK, reply = '%2'\", \"echo \":'\"':\"=====>>  ALERTA     POR   VALIDACION DE CANTIDAD DE  REGISTROSS !!!  \":'\"':\" \":@FM:x$V0S134), \"@EXEC_INCIDENCIA_EN_CANTIDAD_DE_REGISTROS\")
+   End
+   If (x$V0S134 <> 0) Then
+      err$source = \"EXEC_INCIDENCIA_EN_CANTIDAD_DE_REGISTROS\"; err$number = 1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0044\\Unhandled failure (%1) encountered executing command %2\", x$V0S134:@FM:\"echo \":'\"':\"=====>>  ALERTA     POR   VALIDACION DE CANTIDAD DE  REGISTROSS !!!  \":'\"':\" \")
+      msg$id = \"@EXEC_INCIDENCIA_EN_CANTIDAD_DE_REGISTROS\"; GoTo L$ERROR
+   End
+   x$masked$cmd = \"echo \":'\"':\"=====>>  ALERTA     POR   VALIDACION DE CANTIDAD DE  REGISTROSS !!!  \":'\"':\" \"
+   x$masked$output = ''
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+   If b$InErrorRef Or (x$V0S134 <> 0) Then Goto L$V0S134$SKIPPED
+   cp$value = Lower(x$V0S134)
+   cp$value<2> = Lower(x$V0S134$output)
+   dummy$ = DSCheckPointSetValue(DSJ.ME, x$V0S134$cp, cp$value)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0027\\Checkpointed execution of command '%1'\", x$masked$cmd), \"@EXEC_INCIDENCIA_EN_CANTIDAD_DE_REGISTROS\")
+**************************************************
+L$V0S134$SKIPPED:
+   GoTo L$V0S164$RETURN$1
+**************************************************
+L$V12S0$START:
+*** Activity \"ExeCont_NO_Validas\": Execute command
+   x$V12S0$cp = \"x$V12S0\"
+   If DSCheckPointGetValue(DSJ.ME, x$V12S0$cp, cp$value) = DSJE.NOERROR Then
+   x$masked$cmd = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_NO_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+   x$masked$output = ''
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+      Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0023\\Skipped execution of command '%1' on restart\", x$masked$cmd), \"@ExeCont_NO_Validas\")
+      x$V12S0 = Raise(cp$value<1>)
+      x$V12S0$output = Raise(cp$value<2>)
+      IdV12S0%%Result1%%21 = x$V12S0
+      IdV12S0%%Name%%22 = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_NO_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+      IdV12S0%%Result2%%23 = x$V12S0$output
+      Goto L$V12S0$SKIPPED
+   End
+   x$cmd = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_NO_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+   x$type = (If System(91) = 1 Then \"NT\" Else \"UNIX\")
+   Call DSExecute(x$type, x$cmd, x$V12S0$output, x$V12S0)
+   x$masked$cmd = x$cmd
+   x$masked$output = x$V12S0$output
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0007\\Executed: %1<L>Reply=%2<L>Output from command ====><L>%3\", x$masked$cmd:@FM:x$V12S0:@FM:Lower(x$masked$output)), \"@ExeCont_NO_Validas\")
+   IdV12S0%%Result1%%21 = x$V12S0
+   IdV12S0%%Name%%22 = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_NO_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+   IdV12S0%%Result2%%23 = x$V12S0$output
+   If x$V12S0 <> 0 Then
+      Call DSLogWarn(DSMakeMsg(\"DSTAGE_JSG_M_0043\\Command %1 did not finish OK, reply = '%2'\", \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_NO_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\":@FM:x$V12S0), \"@ExeCont_NO_Validas\")
+   End
+   If (x$V12S0 <> 0) Then
+      err$source = \"ExeCont_NO_Validas\"; err$number = 1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0044\\Unhandled failure (%1) encountered executing command %2\", x$V12S0:@FM:\"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_NO_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\")
+      msg$id = \"@ExeCont_NO_Validas\"; GoTo L$ERROR
+   End
+   x$masked$cmd = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_NO_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+   x$masked$output = ''
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+   If b$InErrorRef Or (x$V12S0 <> 0) Then Goto L$V12S0$SKIPPED
+   cp$value = Lower(x$V12S0)
+   cp$value<2> = Lower(x$V12S0$output)
+   dummy$ = DSCheckPointSetValue(DSJ.ME, x$V12S0$cp, cp$value)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0027\\Checkpointed execution of command '%1'\", x$masked$cmd), \"@ExeCont_NO_Validas\")
+**************************************************
+L$V12S0$SKIPPED:
+   GoTo L$V0S127$START
+L$V12S0$RETURN$1:
+   GoTo L$V0S119$RETURN$1
+**************************************************
+L$V13S0$START:
+*** Activity \"ExeConteoExt\": Execute command
+   x$V13S0$cp = \"x$V13S0\"
+   If DSCheckPointGetValue(DSJ.ME, x$V13S0$cp, cp$value) = DSJE.NOERROR Then
+   x$masked$cmd = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_EXT_TRANSACCIONES EXT_TRANSACCIONES LNK_REGISTRA_TRANSACCIONES | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+   x$masked$output = ''
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+      Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0023\\Skipped execution of command '%1' on restart\", x$masked$cmd), \"@ExeConteoExt\")
+      x$V13S0 = Raise(cp$value<1>)
+      x$V13S0$output = Raise(cp$value<2>)
+      IdV13S0%%Result1%%24 = x$V13S0
+      IdV13S0%%Name%%25 = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_EXT_TRANSACCIONES EXT_TRANSACCIONES LNK_REGISTRA_TRANSACCIONES | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+      IdV13S0%%Result2%%26 = x$V13S0$output
+      Goto L$V13S0$SKIPPED
+   End
+   x$cmd = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_EXT_TRANSACCIONES EXT_TRANSACCIONES LNK_REGISTRA_TRANSACCIONES | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+   x$type = (If System(91) = 1 Then \"NT\" Else \"UNIX\")
+   Call DSExecute(x$type, x$cmd, x$V13S0$output, x$V13S0)
+   x$masked$cmd = x$cmd
+   x$masked$output = x$V13S0$output
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0007\\Executed: %1<L>Reply=%2<L>Output from command ====><L>%3\", x$masked$cmd:@FM:x$V13S0:@FM:Lower(x$masked$output)), \"@ExeConteoExt\")
+   IdV13S0%%Result1%%24 = x$V13S0
+   IdV13S0%%Name%%25 = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_EXT_TRANSACCIONES EXT_TRANSACCIONES LNK_REGISTRA_TRANSACCIONES | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+   IdV13S0%%Result2%%26 = x$V13S0$output
+   If x$V13S0 <> 0 Then
+      Call DSLogWarn(DSMakeMsg(\"DSTAGE_JSG_M_0043\\Command %1 did not finish OK, reply = '%2'\", \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_EXT_TRANSACCIONES EXT_TRANSACCIONES LNK_REGISTRA_TRANSACCIONES | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\":@FM:x$V13S0), \"@ExeConteoExt\")
+   End
+   If (x$V13S0 <> 0) Then
+      err$source = \"ExeConteoExt\"; err$number = 1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0044\\Unhandled failure (%1) encountered executing command %2\", x$V13S0:@FM:\"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_EXT_TRANSACCIONES EXT_TRANSACCIONES LNK_REGISTRA_TRANSACCIONES | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\")
+      msg$id = \"@ExeConteoExt\"; GoTo L$ERROR
+   End
+   x$masked$cmd = \"/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_EXT_TRANSACCIONES EXT_TRANSACCIONES LNK_REGISTRA_TRANSACCIONES | awk -F':' '/Link Row Count/ {gsub(/ /,\":'\"':'\"':\",$2); print $2}'\"
+   x$masked$output = ''
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+   If b$InErrorRef Or (x$V13S0 <> 0) Then Goto L$V13S0$SKIPPED
+   cp$value = Lower(x$V13S0)
+   cp$value<2> = Lower(x$V13S0$output)
+   dummy$ = DSCheckPointSetValue(DSJ.ME, x$V13S0$cp, cp$value)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0027\\Checkpointed execution of command '%1'\", x$masked$cmd), \"@ExeConteoExt\")
+**************************************************
+L$V13S0$SKIPPED:
+   GoTo L$V0S110$START
+L$V13S0$RETURN$1:
+   GoTo L$V0S145$RETURN$1
+**************************************************
+L$V0S145$START:
+*** Activity \"JOB_EXT_TRANSACCIONES\": Initialize job
+   b$InErrorRef$V0S145 = b$InErrorRef
+   h$V0S145 = DSAttachJob(\"JOB_EXT_TRANSACCIONES\", DSJ.ERRNONE)
+   If (Not(h$V0S145)) Then
+      err$source = \"JOB_EXT_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0001\\Error calling DSAttachJob(%1)<L>%2\", \"JOB_EXT_TRANSACCIONES\":@FM:DSGetLastErrorMsg())
+      msg$id = \"@JOB_EXT_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   If DSGetJobInfo(h$V0S145, DSJ.JOBMULTIINVOKABLE) Then
+      jb$V0S145 = \"JOB_EXT_TRANSACCIONES\":'.':\"JOB_EXT_TRANSACCIONES\"
+   End Else
+      jb$V0S145 = \"JOB_EXT_TRANSACCIONES\"
+   End
+   dummy$ = DSDetachJob(h$V0S145)
+   b$V0S145skipping = @False
+   h$V0S145$cp = \"h$V0S145\"
+   If DSCheckPointGetValue(DSJ.ME, h$V0S145$cp, cp$value) = DSJE.NOERROR Then
+      Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0021\\Skipped run of job '%1' on restart\", jb$V0S145), \"@JOB_EXT_TRANSACCIONES\")
+      job$V0S145$status = Raise(cp$value<1>)
+      job$V0S145$userstatus = Raise(cp$value<2>)
+      IdV0S145%%Result2%%27 = job$V0S145$userstatus
+      IdV0S145%%Result1%%28 = job$V0S145$status
+      IdV0S145%%Name%%29 = jb$V0S145
+      b$V0S145skipping = @True
+      Goto L$V0S145$SKIPPED
+   End
+   h$V0S145 = DSAttachJob(jb$V0S145, DSJ.ERRNONE)
+   If (Not(h$V0S145)) Then
+      err$source = \"JOB_EXT_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0001\\Error calling DSAttachJob(%1)<L>%2\", jb$V0S145:@FM:DSGetLastErrorMsg())
+      msg$id = \"@JOB_EXT_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   h$V0S145 = DSPrepareJob(h$V0S145)
+   If (Not(h$V0S145)) Then
+      err$source = \"JOB_EXT_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0012\\Error calling DSPrepareJob(%1)<L>%2\", jb$V0S145:@FM:DSGetLastErrorMsg())
+      msg$id = \"@JOB_EXT_TRANSACCIONES\"; GoTo L$ERROR
+   End
+L$V0S145$PREPARED:
+   p$V0S145$1 = \"(As pre-defined)\"
+   err$code = DSSetParam(h$V0S145, \"PS_CON_SAF\", p$V0S145$1)
+   If (err$code <> DSJE.NOERROR) Then
+      err$source = \"JOB_EXT_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0002\\Error calling DSSetParam(%1), code=%2[E]\", \"PS_CON_SAF\":@FM:err$code)
+      msg$id = \"@JOB_EXT_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   p$V0S145$9 = (IdV0S0%%UserVar%%0)
+   err$code = DSSetParam(h$V0S145, \"VAL_DS_TRANSACCIONES\", p$V0S145$9)
+   If (err$code <> DSJE.NOERROR) Then
+      err$source = \"JOB_EXT_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0002\\Error calling DSSetParam(%1), code=%2[E]\", \"VAL_DS_TRANSACCIONES\":@FM:err$code)
+      msg$id = \"@JOB_EXT_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   err$code = DSRunJob(h$V0S145, DSJ.RUNNORMAL)
+   If (err$code <> DSJE.NOERROR) Then
+      err$source = \"JOB_EXT_TRANSACCIONES\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0003\\Error calling DSRunJob(%1), code=%2[E]\", jb$V0S145:@FM:err$code)
+      msg$id = \"@JOB_EXT_TRANSACCIONES\"; GoTo L$ERROR
+   End
+   handle$list<-1> = h$V0S145
+   id$list<-1> = \"V0S145\"
+   GoTo L$V0S0$RETURN$1
+**************************************************
+L$V0S145$FINISHED:
+   job$V0S145$status = DSGetJobInfo(h$V0S145, DSJ.JOBSTATUS)
+   job$V0S145$userstatus = DSGetJobInfo(h$V0S145, DSJ.USERSTATUS)
+   IdV0S145%%Result2%%27 = job$V0S145$userstatus
+   IdV0S145%%Result1%%28 = job$V0S145$status
+   IdV0S145%%Name%%29 = jb$V0S145
+   If (job$V0S145$status <> DSJS.RUNOK) Then
+      Call DSLogWarn(DSMakeMsg(\"DSTAGE_JSG_M_0030\\Job %1 did not finish OK, status = '%2'\", jb$V0S145:@FM:DSTranslateCode(job$V0S145$status)), \"@JOB_EXT_TRANSACCIONES\")
+   End
+   rpt$V0S145 = DSMakeJobReport(h$V0S145, 1, \"CRLF\")
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0004\\Report on job: %1<L>%2\", jb$V0S145:@FM:rpt$V0S145), \"@JOB_EXT_TRANSACCIONES\")
+   rpt$all := \"\\n\":rpt$V0S145 ;* accumulate job reports
+   dummy$ = DSDetachJob(h$V0S145)
+   If b$InErrorRef$V0S145 Or (job$V0S145$status <> DSJS.RUNOK And job$V0S145$status <> DSJS.RUNWARN) Then Goto L$V0S145$SKIPPED
+   cp$value = Lower(job$V0S145$status)
+   cp$value<2> = Lower(job$V0S145$userstatus)
+   dummy$ = DSCheckPointSetValue(DSJ.ME, h$V0S145$cp, cp$value)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0025\\Checkpointed run of job '%1'\", jb$V0S145), \"@JOB_EXT_TRANSACCIONES\")
+**************************************************
+L$V0S145$SKIPPED:
+   If b$Abandoning Then GoTo L$WAITFORJOB
+   b$V0S145else = @True
+   If (job$V0S145$status = DSJS.RUNOK) Then b$V0S145else = @False; GoTo L$V13S0$START
+L$V0S145$RETURN$1:
+   If b$V0S145else Then GoTo L$V0S161$START
+L$V0S145$RETURN$2:
+   If b$V0S145skipping Then GoTo L$V0S0$RETURN$1
+   GoTo L$WAITFORJOB
+**************************************************
+L$V0S154$START:
+*** Activity \"EXEC_FIN\": Execute command
+   x$V0S154$cp = \"x$V0S154\"
+   If DSCheckPointGetValue(DSJ.ME, x$V0S154$cp, cp$value) = DSJE.NOERROR Then
+   x$masked$cmd = \"echo \":'\"':\"FIN EXITOSO PRCESO TRANSAC\":'\"'
+   x$masked$output = ''
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+      Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0023\\Skipped execution of command '%1' on restart\", x$masked$cmd), \"@EXEC_FIN\")
+      x$V0S154 = Raise(cp$value<1>)
+      x$V0S154$output = Raise(cp$value<2>)
+      IdV0S154%%Result1%%30 = x$V0S154
+      IdV0S154%%Name%%31 = \"echo \":'\"':\"FIN EXITOSO PRCESO TRANSAC\":'\"'
+      IdV0S154%%Result2%%32 = x$V0S154$output
+      Goto L$V0S154$SKIPPED
+   End
+   x$cmd = \"echo \":'\"':\"FIN EXITOSO PRCESO TRANSAC\":'\"'
+   x$type = (If System(91) = 1 Then \"NT\" Else \"UNIX\")
+   Call DSExecute(x$type, x$cmd, x$V0S154$output, x$V0S154)
+   x$masked$cmd = x$cmd
+   x$masked$output = x$V0S154$output
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0007\\Executed: %1<L>Reply=%2<L>Output from command ====><L>%3\", x$masked$cmd:@FM:x$V0S154:@FM:Lower(x$masked$output)), \"@EXEC_FIN\")
+   IdV0S154%%Result1%%30 = x$V0S154
+   IdV0S154%%Name%%31 = \"echo \":'\"':\"FIN EXITOSO PRCESO TRANSAC\":'\"'
+   IdV0S154%%Result2%%32 = x$V0S154$output
+   If x$V0S154 <> 0 Then
+      Call DSLogWarn(DSMakeMsg(\"DSTAGE_JSG_M_0043\\Command %1 did not finish OK, reply = '%2'\", \"echo \":'\"':\"FIN EXITOSO PRCESO TRANSAC\":'\"':@FM:x$V0S154), \"@EXEC_FIN\")
+   End
+   If (x$V0S154 <> 0) Then
+      err$source = \"EXEC_FIN\"; err$number = 1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0044\\Unhandled failure (%1) encountered executing command %2\", x$V0S154:@FM:\"echo \":'\"':\"FIN EXITOSO PRCESO TRANSAC\":'\"')
+      msg$id = \"@EXEC_FIN\"; GoTo L$ERROR
+   End
+   x$masked$cmd = \"echo \":'\"':\"FIN EXITOSO PRCESO TRANSAC\":'\"'
+   x$masked$output = ''
+   Call DSMaskExecArgs(x$masked$cmd, x$masked$output)
+   If b$InErrorRef Or (x$V0S154 <> 0) Then Goto L$V0S154$SKIPPED
+   cp$value = Lower(x$V0S154)
+   cp$value<2> = Lower(x$V0S154$output)
+   dummy$ = DSCheckPointSetValue(DSJ.ME, x$V0S154$cp, cp$value)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0027\\Checkpointed execution of command '%1'\", x$masked$cmd), \"@EXEC_FIN\")
+**************************************************
+L$V0S154$SKIPPED:
+   GoTo L$V0S107$RETURN$1
+**************************************************
+L$V0S157$START:
+* Send stop request to any outstanding child jobs
+   For index$ = 1 To DCount(handle$list, @FM)
+      handle$ = handle$list<index$>
+      If handle$ <> \"\" Then
+         job$name = DSGetJobInfo(handle$, DSJ.JOBNAME)
+         job$invid = DSGetJobInfo(handle$, DSJ.JOBINVOCATIONID)
+         if job$invid <> \"\" Then job$name = job$name:\".\":job$invid
+         Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0019\\Sending STOP request to job: %1\", job$name), \"@TEA_LOAD\")
+         dummy$ = DSStopJob(handle$)
+      End
+   Next index$
+   Call DSLogFatal(DSMakeMsg(\"DSTAGE_JSG_M_0020\\Sequence abort requested\", \"\"), \"@TEA_LOAD\")
+**************************************************
+L$V0S160$START:
+* Send stop request to any outstanding child jobs
+   For index$ = 1 To DCount(handle$list, @FM)
+      handle$ = handle$list<index$>
+      If handle$ <> \"\" Then
+         job$name = DSGetJobInfo(handle$, DSJ.JOBNAME)
+         job$invid = DSGetJobInfo(handle$, DSJ.JOBINVOCATIONID)
+         if job$invid <> \"\" Then job$name = job$name:\".\":job$invid
+         Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0019\\Sending STOP request to job: %1\", job$name), \"@TEA_TRANSF\")
+         dummy$ = DSStopJob(handle$)
+      End
+   Next index$
+   Call DSLogFatal(DSMakeMsg(\"DSTAGE_JSG_M_0020\\Sequence abort requested\", \"\"), \"@TEA_TRANSF\")
+**************************************************
+L$V0S161$START:
+* Send stop request to any outstanding child jobs
+   For index$ = 1 To DCount(handle$list, @FM)
+      handle$ = handle$list<index$>
+      If handle$ <> \"\" Then
+         job$name = DSGetJobInfo(handle$, DSJ.JOBNAME)
+         job$invid = DSGetJobInfo(handle$, DSJ.JOBINVOCATIONID)
+         if job$invid <> \"\" Then job$name = job$name:\".\":job$invid
+         Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0019\\Sending STOP request to job: %1\", job$name), \"@TEA_EXT\")
+         dummy$ = DSStopJob(handle$)
+      End
+   Next index$
+   Call DSLogFatal(DSMakeMsg(\"DSTAGE_JSG_M_0020\\Sequence abort requested\", \"\"), \"@TEA_EXT\")
+**************************************************
+L$V0S164$START:
+*** Decision \"NC_VALIDA_REGISTROS\"
+   If (IdV0S127%%UserVar%%4   + IdV0S127%%UserVar%%5  <> IdV0S110%%UserVar%%3) Then GoTo L$V0S134$START
+L$V0S164$RETURN$1:
+   GoTo L$V0S107$START
+L$V0S164$RETURN$2:
+   GoTo L$V0S124$RETURN$1
+**************************************************
+L$V0S171$START:
+*** Decision \"Excep_Handler\"
+   GoTo L$V0S174$START
+L$V0S171$RETURN$1:
+   GoTo L$WAITFORJOB
+**************************************************
+L$V0S174$START:
+*** Activity \"Not_email\": Call routine
+   r$V0S174$cp = \"r$V0S174\"
+   If DSCheckPointGetValue(DSJ.ME, r$V0S174$cp, cp$value) = DSJE.NOERROR Then
+      Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0022\\Skipped call of routine '%1' on restart\", \"DSSendMail\"), \"@Not_email\")
+      r$V0S174 = Raise(cp$value<1>)
+      Goto L$V0S174$SKIPPED
+   End
+   rtn$ok = DSCheckRoutine(\"DSSendMail\")
+   If (Not(rtn$ok)) Then
+      err$source = \"Not_email\"; err$number = -1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0005\\BASIC routine is not cataloged: %1\", \"DSSendMail\")
+      msg$id = \"@Not_email\"; GoTo L$ERROR
+   End
+   p$V0S174$0 = \"To:adsfds\\nFrom:dsfsdaf@prueba\\nSubject:dsafsd\\nServer:\":PS_PAR_SAF.$V_FAC_PAR_UDTE_PATH_TEMPORAL:\"\\nBody:\\n\":rpt$all
+   Call 'DSSendMail'(r$V0S174, p$V0S174$0)
+   If r$V0S174 <> 0 Then
+      Call DSLogWarn(DSMakeMsg(\"DSTAGE_JSG_M_0041\\Routine %1 did not finish OK, return code = '%2'\", \"DSSendMail\":@FM:r$V0S174), \"@Not_email\")
+   End
+   If (r$V0S174 <> 0) Then
+      err$source = \"Not_email\"; err$number = 1
+      msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0042\\Unhandled failure (%1) encountered calling routine %2\", r$V0S174:@FM:\"DSSendMail\")
+      msg$id = \"@Not_email\"; GoTo L$ERROR
+   End
+   If b$InErrorRef Or (r$V0S174 <> 0) Then Goto L$V0S174$SKIPPED
+   cp$value = Lower(r$V0S174)
+   dummy$ = DSCheckPointSetValue(DSJ.ME, r$V0S174$cp, cp$value)
+   Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0026\\Checkpointed call of routine '%1'\", \"DSSendMail\"), \"@Not_email\")
+**************************************************
+L$V0S174$SKIPPED:
+   GoTo L$V0S171$RETURN$1
+**************************************************
+L$WAITFORJOB:
+   If handle$list = \"\" Then GoTo L$FINISH
+   handle$ = DSWaitForJob(handle$list)
+   If handle$ = 0 Then handle$ = handle$list<1>
+   Locate handle$ In handle$list Setting index$ Then
+      id$ = id$list<index$>
+      Del id$list<index$>; Del handle$list<index$>
+      b$Abandoning = abort$list<index$>; Del abort$list<index$>
+      Begin Case
+      Case id$ = \"V0S106\"
+         GoTo L$V0S106$FINISHED
+      Case id$ = \"V0S107\"
+         GoTo L$V0S107$FINISHED
+      Case id$ = \"V0S145\"
+         GoTo L$V0S145$FINISHED
+      End Case
+   End
+* Error if fall though
+   handle$list = \"\"
+   err$source = \"@Coordinator\"; err$number = -1
+   msg$ = DSMakeMsg(\"DSTAGE_JSG_M_0008\\Error calling DSWaitForJob(), code=%1[E]\", handle$)
+   msg$id = \"@Coordinator\"; GoTo L$ERROR
+**************************************************
+L$ERROR:
+   IdV0S171%%Param%%33 = err$source
+   IdV0S171%%Param%%34 = err$number
+   IdV0S171%%Param%%35 = msg$
+   If Not(b$InErrorRef) Then
+      dummy$ = DSCheckPointSetValue(DSJ.ME, \"!\", DSMakeMsg(\"DSTAGE_JSG_M_0031\\Failed at: %1, Reason=%2\", err$source:@FM:msg$))
+   End
+   abort$list = Ifs(handle$list, Str(1:@FM, DCount(handle$list, @FM)), \"\")
+   If Not(b$InErrorRef) Then
+      Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0010\\Will execute error activity: %1\", \"Excep_Handler\"), msg$id)
+      b$InErrorRef = @True
+      b$NumStarted = 1
+      GoTo L$V0S171$START
+   End Else
+      Call DSLogWarn(DSMakeMsg(\"DSTAGE_JSG_M_0011\\Error while executing error activity: %1\", \"Excep_Handler\"), msg$id)
+   End
+   b$Abandoning = @True
+   GoTo L$WAITFORJOB
+L$ABORT:
+   Call DSLogFatal(DSMakeMsg(\"DSTAGE_JSG_M_0014\\Sequence job (restartable) will abort due to previous unrecoverable errors\", \"\"), \"@Coordinator\")
+**************************************************
+L$FINISH:
+   If b$Abandoning Then GoTo L$ABORT
+*** At successful exit remove checkpoint record
+   If Not(b$InErrorRef) And DSCheckPointExists(DSJ.ME, cp$dtm) Then
+      dummy$ = DSCheckPointDelete(DSJ.ME)
+      Call DSLogInfo(DSMakeMsg(\"DSTAGE_JSG_M_0018\\Removed checkpoint record at successful completion of sequence\", \"\"), \"@Coordinator\")
+   End
+   L$EXIT: Return To L$EXIT
+ 
+
+=+=+=+=
+      ControlAfterSubr "0"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "PS_PAR_SAF"
+         Prompt "PS_PAR_SAF parameters"
+         Default "(As pre-defined)"
+         HelpTxt "Parametros de SAF"
+         ParamType "13"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "AdvancedRuntimeOptions"
+         Value "#DSProjectARTOptions#"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "SequenceUseGridProperties"
+         Value "0"
+      END DSSUBRECORD
+      NULLIndicatorPosition "0"
+      Dependencies "CJobDepend"
+      BEGIN DSSUBRECORD
+         Name "JOB_TRF_TRANSACCIONES"
+         Type "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "JOB_LOAD_TRANSACCIONES"
+         Type "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "JOB_EXT_TRANSACCIONES"
+         Type "0"
+      END DSSUBRECORD
+      IsTemplate "0"
+      NLSLocale ",,,,"
+      JobType "2"
+      Category "\\Test\\PRC_TRANSAC\\SEQ"
+      CenturyBreakYear "30"
+      NextAliasID "2"
+      ParameterFileDDName "DD00001"
+      ReservedWordCheck "1"
+      TransactionSize "0"
+      ValidationStatus "0"
+      Uploadable "0"
+      PgmCustomizationFlag "0"
+      JobReportFlag "0"
+      AllowMultipleInvocations "0"
+      JobSeqCodeGenOpts "checkpoints,handleaborts,logjoberrors,logjobreports,nosummary"
+      Act2ActOverideDefaults "0"
+      Act2ActEnableRowBuffer "0"
+      Act2ActUseIPC "0"
+      Act2ActBufferSize "0"
+      Act2ActIPCTimeout "0"
+      ExpressionSemanticCheckFlag "0"
+      TraceOption "0"
+      EnableCacheSharing "0"
+      RuntimeColumnPropagation "0"
+      RelStagesInJobStatus "-1"
+      WebServiceEnabled "0"
+      MFProcessMetaData "0"
+      MFProcessMetaDataXMLFileExchangeMethod "0"
+      IMSProgType "0"
+      CopyLibPrefix "ARDT"
+      RecordPerformanceResults "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0"
+      OLEType "CContainerView"
+      Readonly "0"
+      Name "Job"
+      NextID "1"
+      IsTopLevel "0"
+      StageList "V1A0|V0S0|V0S106|V0S107|V0S110|V0S119|V0S124|V0S127|V0S134|V12S0|V13S0|V0S145|V0A151|V0S154|V14A0|V0S157|V0S160|V0S161|V15A0|V16A0|V17A0|V18A0|V19A0|V20A0|V0S164|V0S171|V0S174"
+      StageXPos "633|240|744|2424|744|960|1800|1512|2088|1248|480|240|2040|2592|2578|2424|744|240|886|459|95|526|2348|2001|2088|1032|1248"
+      StageYPos "0|192|672|672|408|672|672|672|456|672|408|408|373|672|572|864|792|600|590|477|331|658|595|745|672|936|936"
+      StageTypes "ID_PALETTEJOBANNOTATION|CJSUserVarsActivity|CJSJobActivity|CJSJobActivity|CJSUserVarsActivity|CJSExecCmdActivity|CJSExecCmdActivity|CJSUserVarsActivity|CJSExecCmdActivity|CJSExecCmdActivity|CJSExecCmdActivity|CJSJobActivity|ID_PALETTEANNOTATION|CJSExecCmdActivity|ID_PALETTEANNOTATION|CJSTerminatorActivity|CJSTerminatorActivity|CJSTerminatorActivity|ID_PALETTEANNOTATION|ID_PALETTEANNOTATION|ID_PALETTEANNOTATION|ID_PALETTEANNOTATION|ID_PALETTEANNOTATION|ID_PALETTEANNOTATION|CJSCondition|CJSExceptionHandler|CJSMailActivity"
+      NextStageID "176"
+      SnapToGrid "1"
+      GridLines "0"
+      ZoomValue "80"
+      StageXSize "603|48|48|48|48|48|48|48|48|48|48|48|249|48|249|48|48|48|387|249|132|132|132|249|48|48|48"
+      StageYSize "231|48|48|48|48|48|48|48|48|48|48|48|72|48|72|48|48|48|71|72|72|72|72|72|48|48|48"
+      ContainerViewSizing "0078 0078 0855 0385 0000 0001 0683 0350"
+      StageNames " |UVA_INICIO|JOB_TRF_TRANSACCIONES|JOB_LOAD_TRANSACCIONES|UVA_CONTEO_EXT|ExeContValidas|ExecVALIDACION|UVA_CONTEO_TRF|EXEC_INCIDENCIA_EN_CANTIDAD_DE_REGISTROS|ExeCont_NO_Validas|ExeConteoExt|JOB_EXT_TRANSACCIONES| |EXEC_FIN| |TEA_LOAD|TEA_TRANSF|TEA_EXT| | | | | | |NC_VALIDA_REGISTROS|Excep_Handler|Not_email"
+      StageTypeIDs " |CUserVarsActivity|CJobActivity|CJobActivity|CUserVarsActivity|CExecCommandActivity|CExecCommandActivity|CUserVarsActivity|CExecCommandActivity|CExecCommandActivity|CExecCommandActivity|CJobActivity| |CExecCommandActivity| |CTerminatorActivity|CTerminatorActivity|CTerminatorActivity| | | | | | |CCondition|CExceptionHandler|CNotificationActivity"
+      LinkNames " |LNK_JOB_EXT_TRANSACCIONES|Lnk_A_ExeContValidas,DSLink159|DSLink153,DSLink156|Lnk_JOB_TRF_TRANSACCIONES|Lnk_ExeCont_NO_Validas|Lnk_JOB_LOAD_TRANSACCIONES|Lnk_a_ExecVALIDACION| |Lnk_UVA_CONTEO_TRF|Lnk_UVA_CONTEO_EXT|Lnk_ExeConteoExt,DSLink162| | | | | | | | | | | | |LNK_A_LOAD_TRANSACCIOENS,Lnk_accion_control|DSLink173| "
+      LinkHasMetaDatas " |False|False,False|False,False|False|False|False|False| |False|False|False,False| | | | | | | | | | | | |False,False|False| "
+      LinkTypes " |1|1,1|1,1|1|1|1|1| |1|1|1,1| | | | | | | | | | | | |1,1|1| "
+      LinkNamePositionXs " |250|803,763|2529,2448|768|1068|1885|1612| |1341|586|351,252| | | | | | | | | | | | |2193,2112|1142| "
+      LinkNamePositionYs " |309|677,744|696,777|510|696|696|696| |696|432|432,504| | | | | | | | | | | | |696,588|960| "
+      TargetStageIDs " |V0S145|V0S119,V0S160|V0S154,V0S157|V0S106|V12S0|V0S164|V0S124| |V0S127|V0S110|V13S0,V0S161| | | | | | | | | | | | |V0S107,V0S134|V0S174| "
+      SourceStageEffectiveExecutionModes " |0|0,0|0,0|0|0|0|0| |0|0|0,0| | | | | | | | | | | | |0,0|0| "
+      SourceStageRuntimeExecutionModes " |0|0,0|0,0|0|0|0|0| |0|0|0,0| | | | | | | | | | | | |0,0|0| "
+      TargetStageEffectiveExecutionModes " |0|0,0|0,0|0|0|0|0| |0|0|0,0| | | | | | | | | | | | |0,0|0| "
+      TargetStageRuntimeExecutionModes " |0|0,0|0,0|0|0|0|0| |0|0|0,0| | | | | | | | | | | | |0,0|0| "
+      LinkIsSingleOperatorLookup " |False|False,False|False,False|False|False|False|False| |False|False|False,False| | | | | | | | | | | | |False,False|False| "
+      LinkIsSortSequential " |False|False,False|False,False|False|False|False|False| |False|False|False,False| | | | | | | | | | | | |False,False|False| "
+      LinkSortMode " |0|0,0|0,0|0|0|0|0| |0|0|0,0| | | | | | | | | | | | |0,0|0| "
+      LinkPartColMode " |0|0,0|0,0|0|0|0|0| |0|0|0,0| | | | | | | | | | | | |0,0|0| "
+      LinkSourcePinIDs " |V0S0P2|V0S106P2,V0S106P6|V0S107P4,V0S107P5|V0S110P2|V0S119P2|V0S124P2|V0S127P2| |V12S0P4|V13S0P2|V0S145P2,V0S145P3| | | | | | | | | | | | |V0S164P3,V0S164P4|V0S171P1| "
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0A151"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V0A151"
+      NextID "0"
+      AnnotationType "0"
+      AnnotationText "Manejo de incidencia  por cantidad de registros"
+      TextFont "MS Shell Dlg\\10\\0\\0\\0\\400\\0"
+      TextHorizontalJustification "1"
+      TextVerticalJustification "1"
+      TextColor "0"
+      BackgroundColor "12713983"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S0"
+      OLEType "CJSUserVarsActivity"
+      Readonly "0"
+      Name "UVA_INICIO"
+      NextID "3"
+      OutputPins "V0S0P2"
+      Variables "CParamValues"
+      BEGIN DSSUBRECORD
+         Name "DS_EXTRACCION"
+         Description "\"TMP_TRAN.ds\""
+         ValueType "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "DS_TRANSFOR"
+         Description "\"TMP_TRAN_VALIDAS.ds\""
+         ValueType "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "FILE_OUTPÚT"
+         Description "\"output.csv\""
+         ValueType "0"
+      END DSSUBRECORD
+      StageType "CUserVarsActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S0P2"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "LNK_JOB_EXT_TRANSACCIONES"
+      Partner "V0S145|V0S145P1"
+      ConditionType "0"
+      LeftTextPos "250"
+      TopTextPos "309"
+      SourceID "V0S0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S106"
+      OLEType "CJSJobActivity"
+      Readonly "0"
+      Name "JOB_TRF_TRANSACCIONES"
+      NextID "7"
+      InputPins "V0S106P5"
+      OutputPins "V0S106P2|V0S106P6"
+      JobType "0"
+      ExecutionType "1"
+      Jobname "JOB_TRF_TRANSACCIONES"
+      ParameterValues "CParamValues"
+      BEGIN DSSUBRECORD
+         Name "V_DS_TRANSACCIONES"
+         Description "UVA_INICIO.DS_EXTRACCION"
+         ValueType "4"
+         DisplayValue "UVA_INICIO.DS_EXTRACCION"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "V_DS_TRF_VALIDAS"
+         Description "UVA_INICIO.DS_TRANSFOR"
+         ValueType "4"
+         DisplayValue "UVA_INICIO.DS_TRANSFOR"
+      END DSSUBRECORD
+      CheckPoint "0"
+      StageType "CJobActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S106P2"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "Lnk_A_ExeContValidas"
+      Partner "V0S119|V0S119P3"
+      ConditionType "2"
+      TriggerExpression "\"Executed OK\""
+      LeftTextPos "803"
+      TopTextPos "677"
+      SourceID "V0S106"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S106P5"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "Lnk_JOB_TRF_TRANSACCIONES"
+      Partner "V0S110|V0S110P2"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S106P6"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "DSLink159"
+      Partner "V0S160|V0S160P1"
+      ConditionType "1"
+      TriggerExpression "N/A"
+      LeftTextPos "763"
+      TopTextPos "744"
+      SourceID "V0S106"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S107"
+      OLEType "CJSJobActivity"
+      Readonly "0"
+      Name "JOB_LOAD_TRANSACCIONES"
+      NextID "7"
+      InputPins "V0S107P6"
+      OutputPins "V0S107P4|V0S107P5"
+      JobType "0"
+      ExecutionType "1"
+      Jobname "JOB_LOAD_TRANSACCIONES"
+      ParameterValues "CParamValues"
+      BEGIN DSSUBRECORD
+         Name "V_DS_TRF_VALIDAS"
+         Description "UVA_INICIO.DS_TRANSFOR"
+         ValueType "4"
+         DisplayValue "UVA_INICIO.DS_TRANSFOR"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "V_FILE_SALIDA"
+         Description "UVA_INICIO.FILE_OUTPÚT"
+         ValueType "4"
+         DisplayValue "UVA_INICIO.FILE_OUTPÚT"
+      END DSSUBRECORD
+      CheckPoint "0"
+      StageType "CJobActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S107P4"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "DSLink153"
+      Partner "V0S154|V0S154P1"
+      ConditionType "2"
+      TriggerExpression "\"Executed OK\""
+      LeftTextPos "2529"
+      TopTextPos "696"
+      SourceID "V0S107"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S107P5"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "DSLink156"
+      Partner "V0S157|V0S157P1"
+      ConditionType "1"
+      TriggerExpression "N/A"
+      LeftTextPos "2448"
+      TopTextPos "777"
+      SourceID "V0S107"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S107P6"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "LNK_A_LOAD_TRANSACCIOENS"
+      Partner "V0S164|V0S164P3"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S110"
+      OLEType "CJSUserVarsActivity"
+      Readonly "0"
+      Name "UVA_CONTEO_EXT"
+      NextID "7"
+      InputPins "V0S110P6"
+      OutputPins "V0S110P2"
+      Variables "CParamValues"
+      BEGIN DSSUBRECORD
+         Name "vConteoExt"
+         Description =+=+=+=
+TRIM (Field (Convert(@FM,'', ExeConteoExt.$CommandOutput) ,' ',5))
+
+=+=+=+=
+         ValueType "0"
+      END DSSUBRECORD
+      StageType "CUserVarsActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S110P2"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "Lnk_JOB_TRF_TRANSACCIONES"
+      Partner "V0S106|V0S106P5"
+      ConditionType "0"
+      LeftTextPos "768"
+      TopTextPos "510"
+      SourceID "V0S110"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S110P6"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "Lnk_UVA_CONTEO_EXT"
+      Partner "V13S0|V13S0P2"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S119"
+      OLEType "CJSExecCmdActivity"
+      Readonly "0"
+      Name "ExeContValidas"
+      NextID "4"
+      InputPins "V0S119P3"
+      OutputPins "V0S119P2"
+      CmdType "0"
+      Path "/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\"\",$2); print $2}'"
+      CheckPoint "0"
+      StageType "CExecCommandActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S119P2"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "Lnk_ExeCont_NO_Validas"
+      Partner "V12S0|V12S0P3"
+      ConditionType "0"
+      LeftTextPos "1068"
+      TopTextPos "696"
+      SourceID "V0S119"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S119P3"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "Lnk_A_ExeContValidas"
+      Partner "V0S106|V0S106P2"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S124"
+      OLEType "CJSExecCmdActivity"
+      Readonly "0"
+      Name "ExecVALIDACION"
+      NextID "5"
+      InputPins "V0S124P3"
+      OutputPins "V0S124P2"
+      CmdType "0"
+      Path "echo \"TOTAL_FUENTE:#UVA_CONTEO_EXT.vConteoExt#  VALIDAS:#UVA_CONTEO_TRF.vContValidas#  NO_VALIDAS: #UVA_CONTEO_TRF.vContNoValidas# \"  "
+      CheckPoint "0"
+      StageType "CExecCommandActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S124P2"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "Lnk_JOB_LOAD_TRANSACCIONES"
+      Partner "V0S164|V0S164P1"
+      ConditionType "0"
+      TriggerExpression "N/A"
+      LeftTextPos "1885"
+      TopTextPos "696"
+      SourceID "V0S124"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S124P3"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "Lnk_a_ExecVALIDACION"
+      Partner "V0S127|V0S127P2"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S127"
+      OLEType "CJSUserVarsActivity"
+      Readonly "0"
+      Name "UVA_CONTEO_TRF"
+      NextID "4"
+      InputPins "V0S127P3"
+      OutputPins "V0S127P2"
+      Variables "CParamValues"
+      BEGIN DSSUBRECORD
+         Name "vContValidas"
+         Description "TRIM (Field (Convert(@FM,'', ExeContValidas.$CommandOutput) ,' ',5))"
+         ValueType "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "vContNoValidas"
+         Description "TRIM (Field (Convert(@FM,'', ExeCont_NO_Validas.$CommandOutput) ,' ',5))"
+         ValueType "0"
+      END DSSUBRECORD
+      StageType "CUserVarsActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S127P2"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "Lnk_a_ExecVALIDACION"
+      Partner "V0S124|V0S124P3"
+      ConditionType "0"
+      LeftTextPos "1612"
+      TopTextPos "696"
+      SourceID "V0S127"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S127P3"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "Lnk_UVA_CONTEO_TRF"
+      Partner "V12S0|V12S0P4"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S134"
+      OLEType "CJSExecCmdActivity"
+      Readonly "0"
+      Name "EXEC_INCIDENCIA_EN_CANTIDAD_DE_REGISTROS"
+      NextID "4"
+      InputPins "V0S134P3"
+      CmdType "0"
+      Path "echo \"=====>>  ALERTA     POR   VALIDACION DE CANTIDAD DE  REGISTROSS !!!  \" "
+      CheckPoint "0"
+      StageType "CExecCommandActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S134P3"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "Lnk_accion_control"
+      Partner "V0S164|V0S164P4"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S145"
+      OLEType "CJSJobActivity"
+      Readonly "0"
+      Name "JOB_EXT_TRANSACCIONES"
+      NextID "4"
+      InputPins "V0S145P1"
+      OutputPins "V0S145P2|V0S145P3"
+      JobType "0"
+      ExecutionType "1"
+      Jobname "JOB_EXT_TRANSACCIONES"
+      ParameterValues "CParamValues"
+      BEGIN DSSUBRECORD
+         Name "PS_CON_SAF"
+         Description "\"(As pre-defined)\""
+         ValueType "4"
+         DisplayValue "\"(As pre-defined)\""
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VAL_DS_TRANSACCIONES"
+         Description "UVA_INICIO.DS_EXTRACCION"
+         ValueType "4"
+         DisplayValue "UVA_INICIO.DS_EXTRACCION"
+      END DSSUBRECORD
+      CheckPoint "0"
+      StageType "CJobActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S145P1"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "LNK_JOB_EXT_TRANSACCIONES"
+      Partner "V0S0|V0S0P2"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S145P2"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "Lnk_ExeConteoExt"
+      Partner "V13S0|V13S0P1"
+      ConditionType "2"
+      TriggerExpression "\"Executed OK\""
+      LeftTextPos "351"
+      TopTextPos "432"
+      SourceID "V0S106"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S145P3"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "DSLink162"
+      Partner "V0S161|V0S161P1"
+      ConditionType "1"
+      TriggerExpression "N/A"
+      LeftTextPos "252"
+      TopTextPos "504"
+      SourceID "V0S145"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S154"
+      OLEType "CJSExecCmdActivity"
+      Readonly "0"
+      Name "EXEC_FIN"
+      NextID "2"
+      InputPins "V0S154P1"
+      CmdType "0"
+      Path "echo \"FIN EXITOSO PRCESO TRANSAC\""
+      CheckPoint "0"
+      StageType "CExecCommandActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S154P1"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "DSLink153"
+      Partner "V0S107|V0S107P4"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S157"
+      OLEType "CJSTerminatorActivity"
+      Readonly "0"
+      Name "TEA_LOAD"
+      NextID "2"
+      InputPins "V0S157P1"
+      FullDescription "ERROR EN EL  LOAD"
+      TerminationType "0"
+      StageType "CTerminatorActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S157P1"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "DSLink156"
+      Partner "V0S107|V0S107P5"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S160"
+      OLEType "CJSTerminatorActivity"
+      Readonly "0"
+      Name "TEA_TRANSF"
+      NextID "2"
+      InputPins "V0S160P1"
+      FullDescription "ERROR EN TRF"
+      TerminationType "0"
+      StageType "CTerminatorActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S160P1"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "DSLink159"
+      Partner "V0S106|V0S106P6"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S161"
+      OLEType "CJSTerminatorActivity"
+      Readonly "0"
+      Name "TEA_EXT"
+      NextID "2"
+      InputPins "V0S161P1"
+      FullDescription "ERROR EN EXTRACCION"
+      TerminationType "0"
+      StageType "CTerminatorActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S161P1"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "DSLink162"
+      Partner "V0S145|V0S145P3"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S164"
+      OLEType "CJSCondition"
+      Readonly "0"
+      Name "NC_VALIDA_REGISTROS"
+      NextID "5"
+      InputPins "V0S164P1"
+      OutputPins "V0S164P3|V0S164P4"
+      ConditionType "0"
+      StageType "CCondition"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S164P1"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "Lnk_JOB_LOAD_TRANSACCIONES"
+      Partner "V0S124|V0S124P2"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S164P3"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "LNK_A_LOAD_TRANSACCIOENS"
+      Partner "V0S107|V0S107P6"
+      ConditionType "0"
+      TriggerExpression "N/A"
+      LeftTextPos "2193"
+      TopTextPos "696"
+      SourceID "V0S164"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S164P4"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "Lnk_accion_control"
+      Partner "V0S134|V0S134P3"
+      ConditionType "6"
+      TriggerExpression "UVA_CONTEO_TRF.vContValidas   + UVA_CONTEO_TRF.vContNoValidas  <> UVA_CONTEO_EXT.vConteoExt"
+      LeftTextPos "2112"
+      TopTextPos "588"
+      SourceID "V0S164"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S171"
+      OLEType "CJSExceptionHandler"
+      Readonly "0"
+      Name "Excep_Handler"
+      NextID "2"
+      OutputPins "V0S171P1"
+      ExceptionType "0"
+      StageType "CExceptionHandler"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S171P1"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "DSLink173"
+      Partner "V0S174|V0S174P1"
+      ConditionType "0"
+      LeftTextPos "1142"
+      TopTextPos "960"
+      SourceID "V0S171"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S174"
+      OLEType "CJSMailActivity"
+      Readonly "0"
+      Name "Not_email"
+      NextID "2"
+      InputPins "V0S174P1"
+      TransportType "0"
+      Servername "#PS_PAR_SAF.$V_FAC_PAR_UDTE_PATH_TEMPORAL#"
+      RecipientAddress "adsfds"
+      SendersAddress "dsfsdaf@prueba"
+      Subject "dsafsd"
+      IncludeJobReports "1"
+      CheckPoint "0"
+      StageType "CNotificationActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S174P1"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "DSLink173"
+      Partner "V0S171|V0S171P1"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V12S0"
+      OLEType "CJSExecCmdActivity"
+      Readonly "0"
+      Name "ExeCont_NO_Validas"
+      NextID "5"
+      InputPins "V12S0P3"
+      OutputPins "V12S0P4"
+      CmdType "0"
+      Path "/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_TRF_TRANSACCIONES TRF_VALIDA_REGLAS LNK_REGISTRA_TRAN_NO_VALIDAS | awk -F':' '/Link Row Count/ {gsub(/ /,\"\",$2); print $2}'"
+      CheckPoint "0"
+      StageType "CExecCommandActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V12S0P3"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "Lnk_ExeCont_NO_Validas"
+      Partner "V0S119|V0S119P2"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V12S0P4"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "Lnk_UVA_CONTEO_TRF"
+      Partner "V0S127|V0S127P3"
+      ConditionType "0"
+      LeftTextPos "1341"
+      TopTextPos "696"
+      SourceID "V12S0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V13S0"
+      OLEType "CJSExecCmdActivity"
+      Readonly "0"
+      Name "ExeConteoExt"
+      NextID "3"
+      InputPins "V13S0P1"
+      OutputPins "V13S0P2"
+      CmdType "0"
+      Path "/opk/IBM/InformationServer/Server/DSEngine/bin/dsjob -linkinfo DESA_FAC_INTSAF JOB_EXT_TRANSACCIONES EXT_TRANSACCIONES LNK_REGISTRA_TRANSACCIONES | awk -F':' '/Link Row Count/ {gsub(/ /,\"\",$2); print $2}'"
+      CheckPoint "0"
+      StageType "CExecCommandActivity"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V13S0P1"
+      OLEType "CJSActivityInput"
+      Readonly "0"
+      Name "Lnk_ExeConteoExt"
+      Partner "V0S145|V0S145P2"
+      LinkType "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V13S0P2"
+      OLEType "CJSActivityOutput"
+      Readonly "0"
+      Name "Lnk_UVA_CONTEO_EXT"
+      Partner "V0S110|V0S110P6"
+      ConditionType "0"
+      LeftTextPos "586"
+      TopTextPos "432"
+      SourceID "V0S119"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V14A0"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V14A0"
+      NextID "0"
+      AnnotationType "0"
+      AnnotationText "FIN OK"
+      TextFont "MS Shell Dlg\\10\\0\\0\\0\\400\\0"
+      TextHorizontalJustification "1"
+      TextVerticalJustification "1"
+      TextColor "0"
+      BackgroundColor "12713983"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V15A0"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V15A0"
+      NextID "0"
+      AnnotationType "0"
+      AnnotationText "Contar registros en el job de TRF"
+      TextFont "MS Shell Dlg\\10\\0\\0\\0\\400\\0"
+      TextHorizontalJustification "1"
+      TextVerticalJustification "1"
+      TextColor "0"
+      BackgroundColor "12713983"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V16A0"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V16A0"
+      NextID "0"
+      AnnotationType "0"
+      AnnotationText "Contar registros en el job de EXTRACCION"
+      TextFont "MS Shell Dlg\\10\\0\\0\\0\\400\\0"
+      TextHorizontalJustification "1"
+      TextVerticalJustification "1"
+      TextColor "0"
+      BackgroundColor "12713983"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V17A0"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V17A0"
+      NextID "0"
+      AnnotationType "0"
+      AnnotationText " EXTRACCION"
+      TextFont "MS Shell Dlg\\10\\0\\0\\0\\400\\0"
+      TextHorizontalJustification "1"
+      TextVerticalJustification "1"
+      TextColor "0"
+      BackgroundColor "12713983"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V18A0"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V18A0"
+      NextID "0"
+      AnnotationType "0"
+      AnnotationText " EXTRACCION"
+      TextFont "MS Shell Dlg\\10\\0\\0\\0\\400\\0"
+      TextHorizontalJustification "1"
+      TextVerticalJustification "1"
+      TextColor "0"
+      BackgroundColor "12713983"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V19A0"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V19A0"
+      NextID "0"
+      AnnotationType "0"
+      AnnotationText " CARGA"
+      TextFont "MS Shell Dlg\\10\\0\\0\\0\\400\\0"
+      TextHorizontalJustification "1"
+      TextVerticalJustification "1"
+      TextColor "0"
+      BackgroundColor "12713983"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V1A0"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V1A0"
+      NextID "0"
+      AnnotationType "2"
+      TextFont "MS Shell Dlg\\8\\0\\0\\0\\400\\0"
+      TextHorizontalJustification "0"
+      TextVerticalJustification "1"
+      TextColor "0"
+      BackgroundColor "12713983"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V20A0"
+      OLEType "CAnnotation"
+      Readonly "0"
+      Name "V20A0"
+      NextID "0"
+      AnnotationType "0"
+      AnnotationText "Manejo de incidencia  por cantidad de registros"
+      TextFont "Microsoft Sans Serif\\14\\0\\0\\0\\400\\0"
+      TextHorizontalJustification "1"
+      TextVerticalJustification "1"
+      TextColor "0"
+      BackgroundColor "16776960"
+      BackgroundTransparent "0"
+      BorderVisible "1"
+   END DSRECORD
+END DSJOB
